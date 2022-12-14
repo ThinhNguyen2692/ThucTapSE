@@ -39,5 +39,7 @@ namespace TicketDesk.Web.Client
             MvcHandler.DisableMvcResponseHeader = true;
         }
 
+
+
     }
 }
