@@ -18,6 +18,8 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using System.ComponentModel.DataAnnotations;
 using TicketDesk.Localization.Identity;
 using TicketDesk.Localization;
+using System.Collections.Generic;
+
 
 namespace TicketDesk.Web.Identity.Model
 {

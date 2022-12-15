@@ -8,6 +8,12 @@ namespace TicketDesk.Domain.Model
 {
     public class Project
     {
+
+        public Project()
+        {
+            ProjectUsers = new HashSet<ProjectUser>();
+        }
+
         [Key]
         public int ProjectId { get; set; }
 
@@ -25,6 +31,11 @@ namespace TicketDesk.Domain.Model
         [Timestamp]
         public byte[] Version { get; set; }
 
-        public virtual ICollection<Ticket> Tickets { get; set; } 
+        [Column(TypeName = "int")]
+        public int? ReasonableTime { get; set; }
+        public virtual ICollection<Ticket> Tickets { get; set; }
+        public virtual ICollection<ProjectUser> ProjectUsers { get; set; }
+
+
     }
 }

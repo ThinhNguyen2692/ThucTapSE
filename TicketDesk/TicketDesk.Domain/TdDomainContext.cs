@@ -130,6 +130,9 @@ namespace TicketDesk.Domain
         }
 
         public DbSet<Project> Projects { get; set; }
+        public DbSet<ProjectUser> ProjectUser { get; set; }
+        public DbSet<demo> Demo { get; set; }
+        public DbSet<demo2> Demo2 { get; set; }
         public DbSet<TicketEvent> TicketEvents { get; set; }
         public DbSet<Ticket> Tickets { get; set; }
         public DbSet<TicketTag> TicketTags { get; set; }

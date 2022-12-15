@@ -80,6 +80,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TicketDesk.Domain.Legacy\TicketDesk.Domain.Legacy.csproj">
+      <Project>{a85d9882-1db3-40ec-a23e-6b4562f48bcf}</Project>
+      <Name>TicketDesk.Domain.Legacy</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TicketDesk.Localization\TicketDesk.Localization.csproj">
       <Project>{be8715f9-e858-473e-a2b6-561c9edca416}</Project>
       <Name>TicketDesk.Localization</Name>

@@ -1,4 +1,4 @@
-// TicketDesk - Attribution notice
+﻿// TicketDesk - Attribution notice
 // Contributor(s):
 //
 //      Stephen Redd (https://github.com/stephenredd)
@@ -78,16 +78,22 @@ namespace TicketDesk.Domain.Model
         [Display(ResourceType = typeof(Strings), Name = "TicketCreatedBy", ShortName = "TicketCreatedByShort")]
         public string CreatedBy { get; set; }
 
+
+        //ngày tạo
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         [Display(ResourceType = typeof(Strings), Name = "TicketCreatedDate", ShortName = "TicketCreatedDateShort")]
         public DateTimeOffset CreatedDate { get; set; }
 
+        //ngày mục tiêu hết hạn
         [Display(ResourceType = typeof(Strings), Name = "TicketTargetDate", ShortName = "TicketTargetDateShort")]
         public DateTimeOffset? TargetDate { get; set; }
+
 
         [Display(ResourceType = typeof(Strings), Name = "TicketResolutionDate", ShortName = "TickeResolutionDateShort")]
         public DateTimeOffset? ResolutionDate { get; set; }
 
+
+        //ngày giải quyết
         [Display(ResourceType = typeof(Strings), Name = "TicketDueDate", ShortName = "TicketDueDateShort")]
         public DateTimeOffset? DueDate { get; set; }
 

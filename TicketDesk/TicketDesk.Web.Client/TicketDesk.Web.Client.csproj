@@ -286,6 +286,7 @@
     <Compile Include="Models\FilterBarViewModel.cs" />
     <Compile Include="Infrastructure\Migration\Legacy\LegacySecurityMigrator.cs" />
     <Compile Include="Models\ProjectListViewModel.cs" />
+    <Compile Include="Models\ProjectViewModel.cs" />
     <Compile Include="Models\SystemInfoViewModel.cs" />
     <Compile Include="Models\TicketCenterListViewModel.cs" />
     <Compile Include="Models\TicketEmail.cs" />

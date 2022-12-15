@@ -22,9 +22,11 @@
     <meta name="msapplication-config" content="none" />
     <title>
         @RenderSection("title", required: false)
+
     </title>
     <style type="text/css">
     </style>
+    @RenderSection("css", false);
     @Styles.Render("~/content/styles")
     @Scripts.Render("~/bundles/modernizr")
     @RenderSection("customHeader", required: false)

@@ -17,7 +17,10 @@
 @using TicketDesk.Localization.Views.Ticket
 @using System.Configuration
 @using TicketDesk.Domain.Model
-@model Ticket
+@using TicketDesk.Web.Client.Models;
+@model NewTicker
+
+
 
 @section title { @New.Title }
 
@@ -36,7 +39,7 @@
     @Scripts.Render("~/bundles/editor")
     @Scripts.Render("~/bundles/datepicker")
 
-    <script type="text/javascript">
+<script type="text/javascript">
 
         (function () {
             $.ajaxSetup({ cache: false });
@@ -51,7 +54,7 @@
                 tagAutoCompleteUrl: '@Url.Action("TagList", "AutoComplete")'
             };
             var detailsConfig = {
-                isHtml: @(Model.IsHtml ? "true" : "false")
+                isHtml: @(Model.Ticket.IsHtml ? "true" : "false")
                 };
             window.ticketTags.activate(tagsConfig);
             window.ticketDetails.activate(detailsConfig);
@@ -60,7 +63,31 @@
             $("#TargetDateAsString").datepicker({ autoclose: true, clearBtn:true, todayBtn: "linked" });
             $("#ResolutionDateAsString").datepicker({ autoclose: true, clearBtn:true, todayBtn: "linked" });
         })();
-    </script>
+   var lstCountries = JSON.parse(@Html.Raw(Json.Encode(Model.json)));
+    $("#project").change(function (e) {
+        var idProject = $(this).find(":selected").val();
+        let obj = lstCountries.find(o => o.ProjectId === (idProject * 1)).ReasonableTime;
+        $("#Number-of-days").val(obj)
+      
+        $("#expiration-date").val(addDaysToDate(obj))
+      
+    });
+
+
+    function addDaysToDate(obj) {
+        var now = new Date();
+
+        var daySum = now.getDate() + obj;
+        var day = ("0" + daySum).slice(-2);
+        var month = ("0" + (now.getMonth() + 1)).slice(-2);
+
+        var today = now.getFullYear() + "-" + (month) + "-" + (day);
+
+        
+        return today;
+    }
+
+</script>
 }
 <main>
     <div class="container">
@@ -77,34 +104,35 @@
 
                         @Html.ValidationSummary(true, New.UnableCreateTicket, new { @class = "alert alert-danger" })
 
-                        @Html.HiddenFor(model => model.TicketId)
-                        @Html.HiddenFor(model => model.IsHtml)
+                        @Html.HiddenFor(model => model.Ticket.TicketId)
+                        @Html.HiddenFor(model => model.Ticket.IsHtml)
                         <input type="hidden" name="tempId" value="@ViewBag.TempId" />
 
                         @if (ViewBag.IsMultiProject ?? false)
                         {
                             <div class="form-group">
-                                @Html.LabelFor(model => model.ProjectId, new { @class = "col-md-2 col-sm-1 control-label" })
+                                @Html.LabelFor(model => model.Ticket.ProjectId, new { @class = "col-md-2 col-sm-1 control-label" })
                                 <div class="col-md-8 col-sm-11">
-                                    @Html.DropDownListFor(model => model.ProjectId, Model.GetProjectList((int?)ViewBag.SelectedProjectId), new { @class = "form-control input-sm", tabindex = 0 })
-                                    @Html.ValidationMessageFor(model => model.ProjectId, "", new { @class = "text-danger" })
+                                    @*//  @Html.DropDownListFor(model => model.Ticket.ProjectId, Model.GetProjectList((int?)ViewBag.SelectedProjectId), new { @class = "form-control input-sm", id = "project", tabindex = 0 })*@
+                                     @Html.DropDownListFor(m => m.Ticket.ProjectId, new SelectList(Model.ProjectViewModels, "ProjectId", "ProjectName"), new { @class = "form-control input-sm", id = "project", tabindex = 0 })
+                                    @Html.ValidationMessageFor(model => model.Ticket.ProjectId, "", new { @class = "text-danger" })
 
                                 </div>
                             </div>
                         }
                         else
                         {
-                            @Html.HiddenFor(model => model.ProjectId)
+                            @Html.HiddenFor(model => model.Ticket.ProjectId)
                         }
                         <div class="form-group">
-                            @Html.LabelFor(model => model.Title, new { @class = "col-md-2 col-sm-1 control-label focus" })
+                            @Html.LabelFor(model => model.Ticket.Title, new { @class = "col-md-2 col-sm-1 control-label focus" })
                             <div class="col-md-8 col-sm-11">
-                                @Html.TextBoxFor(model => model.Title, new { @class = "form-control input-sm", placeholder = New.TicketTitle_Placeholder, tabindex = 1, autofocus = string.Empty })
-                                @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                                @Html.TextBoxFor(model => model.Ticket.Title, new { @class = "form-control input-sm", placeholder = New.TicketTitle_Placeholder, tabindex = 1, autofocus = string.Empty })
+                                @Html.ValidationMessageFor(model => model.Ticket.Title, "", new { @class = "text-danger" })
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        @*<div class="form-group">
                             @Html.LabelFor(model => model.TicketType, new { @class = "col-md-2 col-sm-1 control-label" })
                             <div class="col-md-2 col-sm-3">
                                 @Html.DropDownListFor(model => model.TicketType, Model.GetTicketTypeList(), new { @class = "form-control input-sm", tabindex = 2 })
@@ -124,8 +152,8 @@
                                     @Html.ValidationMessageFor(model => model.Priority, "", new { @class = "text-danger" })
                                 </div>
                             }
-                        </div>
-                        <div class="form-group">
+                        </div>*@
+                        @*<div class="form-group">
                             <div class="col-md-2 col-md-offset-2 col-sm-1 col-sm-offset-1">
                                 <label class="checkbox-inline" for="affectsCustomer">
                                     <input class="" type="checkbox" name="affectsCustomer" id="affectsCustomer" value="true" tabindex="5" />
@@ -136,46 +164,46 @@
                             <div class="col-md-4 col-sm-6">
                                 @Html.TextBoxFor(model => model.DueDateAsString, new { @class = "form-control input-sm", tabindex = 6 })
                             </div>
-                        </div>
-                        <div class="form-group">
-                            @Html.LabelFor(model => model.TargetDate, new { @class = "col-md-2 col-sm-2 control-label" })
+                        </div>*@
+                        @*<div class="form-group">
+                            @Html.LabelFor(model => model.TargetDate, new { @class = "col-md-2 col-sm-2 control-label"})
                             <div class="col-md-3 col-sm-3">
-                                @Html.TextBoxFor(model => model.TargetDateAsString, new { @class = "form-control input-sm", tabindex = 7 })
+                                @Html.TextBoxFor(model => model.TargetDateAsString, new { @class = "form-control input-sm", tabindex = 7, @readonly = "True" })
                             </div>
                             @Html.LabelFor(model => model.ResolutionDate, new { @class = "col-md-2 col-sm-2 control-label" })
                             <div class="col-md-3 col-sm-3">
-                                @Html.TextBoxFor(model => model.ResolutionDateAsString, new { @class = "form-control input-sm", tabindex = 8 })
+                                @Html.TextBoxFor(model => model.ResolutionDateAsString, new { @class = "form-control input-sm", tabindex = 8, @readonly = "True" })
                             </div>
-                        </div>
+                        </div>*@
                         <div class="form-group">
-                            @Html.LabelFor(model => model.EstimatedDuration, new { @class = "col-md-2 col-sm-3 control-label" })
+                            @Html.LabelFor(model => model.Ticket.EstimatedDuration, new { @class = "col-md-2 col-sm-3 control-label" })
                             <div class="col-md-3 col-sm-6">
-                                @Html.TextBoxFor(model => model.EstimatedDuration, new { @class = "form-control input-sm", tabindex = 9 })
-                                @Html.ValidationMessageFor(model => model.EstimatedDuration, "", new { @class = "text-danger" })
+                                @Html.TextBoxFor(model => model.Ticket.EstimatedDuration, new { @class = "form-control input-sm", tabindex = 9, @readonly = "True", id= "Number-of-days" })
+                                @Html.ValidationMessageFor(model => model.Ticket.EstimatedDuration, "", new { @class = "text-danger"})
                             </div>
 
-                            @Html.LabelFor(model => model.ActualDuration, new { @class = "col-md-2 col-sm-3 control-label" })
+                            @Html.LabelFor(model => model.Ticket.ActualDuration, new { @class = "col-md-2 col-sm-3 control-label" })
                             <div class="col-md-3 col-sm-6">
-                                @Html.TextBoxFor(model => model.ActualDuration, new { @class = "form-control input-sm", tabindex = 10 })
-                                @Html.ValidationMessageFor(model => model.ActualDuration, "", new { @class = "text-danger" })
+                                @Html.TextBoxFor(model => model.Ticket.TargetDate, new { @class = "form-control input-sm" ,tabindex = 10, @readonly = "True", type="date" ,id= "expiration-date" })
+                                @Html.ValidationMessageFor(model => model.Ticket.TargetDate, "", new { @class = "text-danger" })
                             </div>
                         </div>
-                        @if (Model.AllowEditTags())
+                        @if (Model.Ticket.AllowEditTags())
                         {
                             <div class="form-group">
-                                @Html.LabelFor(model => model.TagList, new { @class = "col-md-2 col-sm-1 control-label" })
+                                @Html.LabelFor(model => model.Ticket.TagList, new { @class = "col-md-2 col-sm-1 control-label" })
                                 <div class="col-md-8 col-sm-11">
-                                    @Html.TextBoxFor(m => m.TagList, new { id = "ticketTags", @class = "form-control input-sm", tabindex = 11 })
+                                    @Html.TextBoxFor(m => m.Ticket.TagList, new { id = "ticketTags", @class = "form-control input-sm", tabindex = 11 })
                                 </div>
                             </div>
                         }
-                        @if (Model.IsHtml)//TODO: Refactor into a partial or mvc editorfor view
+                        @if (Model.Ticket.IsHtml)//TODO: Refactor into a partial or mvc editorfor view
                         {
                             <div class="form-group">
                                 <label class="col-md-2 col-sm-1 control-label text-right" for="summernote">@New.Details</label>
                                 <div class="col-md-8 col-sm-11">
-                                    <textarea id="wmd-input-ticketDetails" name="Details" data-val-required="" data-val="true">@Model.Details</textarea>
-                                    @Html.ValidationMessageFor(model => model.Details, "", new { @class = "text-danger" })
+                                    <textarea id="wmd-input-ticketDetails" name="Details" data-val-required="" data-val="true">@Model.Ticket.Details</textarea>
+                                    @Html.ValidationMessageFor(model => model.Ticket.Details, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         }
@@ -188,7 +216,7 @@
                                         <div class="tab-content">
                                             <div class="tab-pane fade in active" id="tab1">
                                                 <div id="wmd-button-bar-ticketDetails" class="" style="display: inline-block"></div>
-                                                @Html.TextAreaFor(model => model.Details, new { id = "wmd-input-ticketDetails", @class = "wmd-input form-control", data_val_required = "", data_val = "true", cols = "92", rows = "15", style = "height:200px", tabindex = 12 })
+                                                @Html.TextAreaFor(model => model.Ticket.Details, new { id = "wmd-input-ticketDetails", @class = "wmd-input form-control", data_val_required = "", data_val = "true", cols = "92", rows = "15", style = "height:200px", tabindex = 12 })
 
                                             </div>
                                             <div class="tab-pane fade" id="tab2">
@@ -204,25 +232,25 @@
                                             <li><a href="#tab2" data-toggle="tab"><i class="fa fa-eye"></i>&nbsp;@New.PreviewOption</a></li>
                                         </ul>
                                     </div>
-                                    @Html.ValidationMessageFor(model => model.Details, "", new { @class = "text-danger" })
+                                    @Html.ValidationMessageFor(model => model.Ticket.Details, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         }
                         <div class="form-group">
-                            @if (Model.AllowSetOwner())
+                            @if (Model.Ticket.AllowSetOwner())
                             {
-                                @Html.LabelFor(model => model.Owner, new { @class = "col-md-2 col-sm-1 control-label" })
+                                @Html.LabelFor(model => model.Ticket.Owner, new { @class = "col-md-2 col-sm-1 control-label" })
                                 <div class="col-md-3 col-sm-5">
-                                    @Html.DropDownListFor(model => model.Owner, Model.GetOwnersList(), new { @class = "form-control input-sm", tabindex = 13 })
-                                    @Html.ValidationMessageFor(model => model.Owner, "", new { @class = "text-danger" })
+                                    @Html.DropDownListFor(model => model.Ticket.Owner, Model.Ticket.GetOwnersList(), new { @class = "form-control input-sm", tabindex = 13 })
+                                    @Html.ValidationMessageFor(model => model.Ticket.Owner, "", new { @class = "text-danger" })
                                 </div>
                             }
-                            @if (Model.AllowSetAssigned())
+                            @if (Model.Ticket.AllowSetAssigned())
                             {
-                                @Html.LabelFor(model => model.AssignedTo, new { @class = "col-md-2 col-sm-2 control-label" })
+                                @Html.LabelFor(model => model.Ticket.AssignedTo, new { @class = "col-md-2 col-sm-2 control-label" })
                                 <div class="col-md-3 col-sm-4">
-                                    @Html.DropDownListFor(model => model.AssignedTo, Model.GetAssignedToList(), new { @class = "form-control input-sm", tabindex = 14 })
-                                    @Html.ValidationMessageFor(model => model.AssignedTo, "", new { @class = "text-danger" })
+                                    @Html.DropDownListFor(model => model.Ticket.AssignedTo, Model.Ticket.GetAssignedToList(), new { @class = "form-control input-sm", tabindex = 14 })
+                                    @Html.ValidationMessageFor(model => model.Ticket.AssignedTo, "", new { @class = "text-danger" })
                                 </div>
                             }
                         </div>

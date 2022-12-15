@@ -4,8 +4,13 @@ using System.Threading.Tasks;
 using System.Web.Mvc;
 using TicketDesk.Domain;
 using TicketDesk.Domain.Model;
+using TicketDesk.Web.Identity.Model;
 using TicketDesk.Web.Client.Models;
 using TicketDesk.Localization.Controllers;
+using TicketDesk.Web.Identity;
+using TicketDesk.Web.Identity.Model;
+using System.Collections.Generic;
+using System;
 
 namespace TicketDesk.Web.Client.Controllers
 {
@@ -16,10 +21,13 @@ namespace TicketDesk.Web.Client.Controllers
     {
 
           private TdDomainContext Context { get; set; }
+        private TdIdentityContext _idIdentityContext { get; set; }
+       
 
-        public ProjectSettingsController(TdDomainContext context)
+        public ProjectSettingsController(TdDomainContext context, TdIdentityContext _idIdentityContext)
         {
             Context = context;
+            this._idIdentityContext = _idIdentityContext;
         }
 
         [Route("projects")]
@@ -31,17 +39,28 @@ namespace TicketDesk.Web.Client.Controllers
         }
 
         [Route("project/new")]
-        public ActionResult New()
+        public async Task<ActionResult> New()
         {
-            return View();
+            ProjectViewModel viewModel = new ProjectViewModel();
+
+           viewModel.UserProjectViewModles = await GetUserByRole("fa3e7fd0-061c-4b32-bc69-d5c7e79c105f");
+            return View(viewModel);
         }
 
         [Route("project/new")]
         [HttpPost]
-        public async Task<ActionResult> New(Project project)
+        public async Task<ActionResult> New(ProjectViewModel projectViewModel)
         {
             if (ModelState.IsValid)
             {
+                Project project = new Project();
+                project.ProjectName = projectViewModel.ProjectName;
+                project.ProjectDescription = projectViewModel.ProjectDescription;
+                project.ReasonableTime = projectViewModel.ReasonableTime;
+                foreach (var item in projectViewModel.UserIds)
+                {
+                    project.ProjectUsers.Add(new ProjectUser { ID = 0, ProjectId = project.ProjectId,UserId = item});
+                }
                 Context.Projects.Add(project);
                 if (await Context.SaveChangesAsync() > 0)
                 {
@@ -49,7 +68,9 @@ namespace TicketDesk.Web.Client.Controllers
                 }
             }
             ModelState.AddModelError("", Strings.UnableToCreateProject);
-            return View();
+            ProjectViewModel viewModel = new ProjectViewModel();
+            viewModel.UserProjectViewModles = await GetUserByRole("fa3e7fd0-061c-4b32-bc69-d5c7e79c105f");
+            return View(viewModel);
         }
 
         [Route("project/delete/{projectId:int}")]
@@ -117,6 +138,19 @@ namespace TicketDesk.Web.Client.Controllers
             }
             await AddViewDataForEdit(projectId);
             return View(project);
+        
+        }
+
+        private async Task<List<UserProjectViewModle>> GetUserByRole(string roleId)
+        {
+
+            var role = await _idIdentityContext.Roles.Where(r => r.Id == roleId).FirstOrDefaultAsync();
+            var users = _idIdentityContext.Users.Where(u => u.LockoutEndDateUtc == null && u.Roles.Where(r => r.RoleId == roleId).ToList().Count > 0)
+             .Select(u => new UserProjectViewModle { UserId = u.Id, UserDisplayName = u.DisplayName})
+                .ToListAsync();
+            
+
+            return await users;
         
         }
 

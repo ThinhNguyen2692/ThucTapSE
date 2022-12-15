@@ -12,6 +12,7 @@
 // provided to the recipient.
 
 using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Validation;
 using System.Globalization;
@@ -22,6 +23,7 @@ using TicketDesk.Domain;
 using TicketDesk.Domain.Model;
 using TicketDesk.IO;
 using TicketDesk.Localization.Controllers;
+using TicketDesk.Web.Client.Models;
 
 namespace TicketDesk.Web.Client.Controllers
 {
@@ -61,18 +63,30 @@ namespace TicketDesk.Web.Client.Controllers
         [Route("new")]
         public async Task<ActionResult> New()
         {
+            var newTicker = new NewTicker();
 
-            var model = new Ticket
+            newTicker.Ticket = new Ticket
             {
                 Owner = Context.SecurityProvider.CurrentUserId,
                 IsHtml = Context.TicketDeskSettings.ClientSettings.GetDefaultTextEditorType() == "summernote"
             };
 
-            await SetProjectInfoForModelAsync(model);
+            await SetProjectInfoForModelAsync(newTicker.Ticket);
+           
+            var arrProject = Context.Projects.ToArray();
 
-            ViewBag.TempId = Guid.NewGuid();
-
-            return View(model);
+            newTicker.ProjectViewModels = new List<ProjectViewModel>();
+            foreach (var item in arrProject)
+            {
+                var project = new ProjectViewModel();
+                project.ProjectId = item.ProjectId;
+                project.ProjectName = item.ProjectName;
+                project.ReasonableTime = item.ReasonableTime;
+                newTicker.ProjectViewModels.Add(project);
+            }
+            newTicker.json = Newtonsoft.Json.JsonConvert.SerializeObject(newTicker.ProjectViewModels);
+          
+            return View(newTicker);
         }
 
 

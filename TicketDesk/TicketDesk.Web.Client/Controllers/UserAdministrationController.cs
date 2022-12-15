@@ -41,6 +41,7 @@ namespace TicketDesk.Web.Client.Controllers
         public async Task<ActionResult> Index(int? page)
         {
             ViewBag.AllRolesList = await RoleManager.Roles.ToListAsync();
+            var name = RoleManager.Roles;
             var users = await GetUsersForListAsync(page ?? 1);
             return View(users);
         }
@@ -237,6 +238,7 @@ namespace TicketDesk.Web.Client.Controllers
             return users;
         }
 
+      
         private async Task<bool> UpdateUserInfo(TicketDeskUser user, UserAccountInfoViewModel model)
         {
             user.UserName = model.User.UserName;
