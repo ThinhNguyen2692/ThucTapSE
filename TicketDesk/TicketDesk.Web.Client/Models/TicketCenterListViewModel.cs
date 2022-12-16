@@ -11,6 +11,8 @@
 // attribution must remain intact, and a copy of the license must be 
 // provided to the recipient.
 
+using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Mvc;
@@ -84,6 +86,33 @@ namespace TicketDesk.Web.Client.Models
             return await query.ToPagedListAsync(pageIndex, pageSize);
         }
 
+
+
+        public async Task<IPagedList<Ticket>> ListTicketsProjectAsync(int pageIndex, int projectId,TdDomainContext context)
+        {
+            var filterColumns = CurrentListSetting.FilterColumns.ToList();
+
+            //if filtering by project, add filter for selected project
+            
+            if (projectId != default(int))
+            {
+                filterColumns.Add(new UserTicketListFilterColumn("ProjectId", true, projectId));
+            }
+
+            DisplayProjects = context.Projects.Count() > 1;
+
+
+            var sortColumns = CurrentListSetting.SortColumns.ToList();
+            var pageSize = CurrentListSetting.ItemsPerPage;
+            var query = context.GetObjectQueryFor(context.Tickets);
+
+            query = filterColumns.ApplyToQuery(query);
+            query = sortColumns.ApplyToQuery(query);
+
+            return await query.ToPagedListAsync(pageIndex, pageSize);
+        }
+
+
         /// <summary>
         /// Gets or (private) sets the filter bar model.
         /// </summary>
@@ -102,7 +131,11 @@ namespace TicketDesk.Web.Client.Models
 
         public UserTicketListSetting CurrentListSetting { get; private set; }
 
+        public List<ProjectUser> Projects { get; set; }
+
         public IOrderedEnumerable<UserTicketListSetting> UserListSettings { get; private set; }
 
+
+     
     }
 }

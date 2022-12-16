@@ -11,7 +11,9 @@
 // attribution must remain intact, and a copy of the license must be 
 // provided to the recipient.
 
+using System.Collections.Generic;
 using System.Linq;
+using System.Data.Entity;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using TicketDesk.Domain;
@@ -49,7 +51,7 @@ namespace TicketDesk.Web.Client.Controllers
             var pageNumber = page ?? 1;
 
             var viewModel = await TicketCenterListViewModel.GetViewModelAsync(pageNumber, listName, Context, Context.SecurityProvider.CurrentUserId);//new TicketCenterListViewModel(listName, model, Context, User.Identity.GetUserId());
-
+            viewModel.Projects = await GetProjectsAsync(Context.SecurityProvider.CurrentUserId);
             return View(viewModel);
         }
 
@@ -137,6 +139,15 @@ namespace TicketDesk.Web.Client.Controllers
 
         }
 
-       
+
+        public async Task<List<ProjectUser>> GetProjectsAsync(string userID)
+        {
+            var projects = new List<ProjectUser>();
+            projects = Context.ProjectUser.Where(u => u.UserId == userID).ToList();
+
+            return projects;
+        }
+
+
     }
 }

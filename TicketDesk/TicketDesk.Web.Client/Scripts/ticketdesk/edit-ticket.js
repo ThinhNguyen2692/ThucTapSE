@@ -182,7 +182,7 @@
 
         var loadActivityButtons = function () {
             $.get(config.activityButtonsUrl, function (data) {
-                $('#activityButtonsPanel').empty().append(data);
+               
             });
         };
 

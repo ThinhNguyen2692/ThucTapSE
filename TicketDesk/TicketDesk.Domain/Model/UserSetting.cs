@@ -34,7 +34,10 @@ namespace TicketDesk.Domain.Model
         {
             return ListSettings.FirstOrDefault(us => us.ListName.Equals(listName, StringComparison.InvariantCultureIgnoreCase));
         }
-
+        //public UserTicketListSetting GetUserListSettingByProject(int projectID)
+        //{
+        //    return ListSettings.FirstOrDefault(us => us.pr);
+        //}
         public static UserSetting GetDefaultSettingsForUser(string userId, bool isHelpDeskUser)
         {
             var collection = new UserTicketListSettingsCollection

@@ -86,11 +86,14 @@
                     <li class="@Html.IsActiveRoute("Index", "TicketCenter")">
                         <a href="@Url.Action("Index", "TicketCenter", new {area = ""})"><i class="fa fa-ticket"></i> @_Layout.TicketCenter</a>
                     </li>
-                    <li class="@Html.IsActiveRoute("New", "Ticket")">
-                        <a href="@Url.Action("New", "Ticket", new {area = ""})"><i class="fa fa-plus"></i> @_Layout.NewTicket</a>
-                    </li>
-                    <li role="separator" class="nav-divider"></li>
-                </ul>
+                    @if (User.Identity.IsAuthenticated && !User.IsInRole("TdHelpDeskUsers"))
+                    {
+                        <li class="@Html.IsActiveRoute("New", "Ticket")">
+                            <a href="@Url.Action("New", "Ticket", new { area = "" })"><i class="fa fa-plus"></i> @_Layout.NewTicket</a>
+                        </li>
+                    }
+                        <li role="separator" class="nav-divider"></li>
+                    </ul>
                 <ul class="nav navbar-nav navbar-right" style="margin-right: 5px;">
                     <li class="dropdown hidden-sm hidden-md hidden-lg" style="padding: 10px 15px;">
                         @Html.Partial("_QuickSearch")
