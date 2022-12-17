@@ -38,11 +38,11 @@ namespace TicketDesk.Domain.Model
         //{
         //    return ListSettings.FirstOrDefault(us => us.pr);
         //}
-        public static UserSetting GetDefaultSettingsForUser(string userId, bool isHelpDeskUser)
+        public static UserSetting GetDefaultSettingsForUser(string userId, bool IsHelpDeskUser)
         {
             var collection = new UserTicketListSettingsCollection
             {
-                UserTicketListSetting.GetDefaultListSettings(userId, isHelpDeskUser)
+                UserTicketListSetting.GetDefaultListSettings(userId, IsHelpDeskUser)
             };
 
             return new UserSetting { UserId = userId, ListSettings = collection };

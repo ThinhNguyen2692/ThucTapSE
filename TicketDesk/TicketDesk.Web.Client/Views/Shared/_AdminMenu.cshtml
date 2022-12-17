@@ -14,7 +14,7 @@
 *@
 @using TicketDesk.Localization.Views.Shared
 <div class="form-group">
-    @if (User.Identity.IsAuthenticated && User.IsInRole("TdAdministrators"))
+    @if (User.Identity.IsAuthenticated && User.IsInRole("TdAdministrators") || User.IsInRole("TdHelpDeskUsers"))
     {
         <div class="input-group input-group-sm">
             <span class="dropdown">

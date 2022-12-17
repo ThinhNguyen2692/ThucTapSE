@@ -16,7 +16,7 @@ namespace TicketDesk.Web.Client.Controllers
 {
     [RoutePrefix("admin")]
     [Route("{action=index}")]
-    [TdAuthorize(Roles = "TdAdministrators")]
+    [TdAuthorize(Roles = "TdAdministrators,TdHelpDeskUsers")]
     public class ProjectSettingsController : Controller
     {
 
@@ -43,7 +43,7 @@ namespace TicketDesk.Web.Client.Controllers
         {
             ProjectNew viewModel = new ProjectNew();
 
-           viewModel.UserProjectViewModles = await GetUserByRole("fa3e7fd0-061c-4b32-bc69-d5c7e79c105f");
+           viewModel.UserProjectViewModles = await GetUserByRole("05a83c59-20cd-409b-b424-ea5f5f15a835");
             return View(viewModel);
         }
 
@@ -69,7 +69,7 @@ namespace TicketDesk.Web.Client.Controllers
             }
             ModelState.AddModelError("", Strings.UnableToCreateProject);
             ProjectNew viewModel = new ProjectNew();
-            viewModel.UserProjectViewModles = await GetUserByRole("fa3e7fd0-061c-4b32-bc69-d5c7e79c105f");
+            viewModel.UserProjectViewModles = await GetUserByRole("05a83c59-20cd-409b-b424-ea5f5f15a835");
             return View(projectViewModel);
         }
 

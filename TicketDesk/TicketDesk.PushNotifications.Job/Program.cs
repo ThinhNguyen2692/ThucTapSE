@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Configuration;
-using Microsoft.Azure.WebJobs;
 using TicketDesk.IO;
 
 namespace TicketDesk.PushNotifications.Job
@@ -21,17 +20,17 @@ namespace TicketDesk.PushNotifications.Job
             }
             var storageConnectionString = AzureConnectionHelper.CloudConfigConnString ??
                                              AzureConnectionHelper.ConfigManagerConnString;
-            var host = new JobHost(new JobHostConfiguration(storageConnectionString));
-            if (isEnabled)
-            {
-                host.Call(typeof(Functions).GetMethod("StartNotificationScheduler"), new { interval});
-                host.RunAndBlock();
-            }
-            else
-            {
-                Console.Out.WriteLine("Push notifications are disabled");
-                host.RunAndBlock();//just run and block, to keep from recycling the service over and over
-            }
+            //var host = 
+            //if (isEnabled)
+            //{
+            //    host.Call(typeof(Functions).GetMethod("StartNotificationScheduler"), new { interval});
+            //    host.RunAndBlock();
+            //}
+            //else
+            //{
+            //    Console.Out.WriteLine("Push notifications are disabled");
+            //    host.RunAndBlock();//just run and block, to keep from recycling the service over and over
+            //}
 
 
         }

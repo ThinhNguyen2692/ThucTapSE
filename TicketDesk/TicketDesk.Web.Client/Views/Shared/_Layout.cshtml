@@ -26,7 +26,7 @@
     </title>
     <style type="text/css">
     </style>
-    @RenderSection("css", false);
+    @RenderSection("css", false)
     @Styles.Render("~/content/styles")
     @Scripts.Render("~/bundles/modernizr")
     @RenderSection("customHeader", required: false)
@@ -86,7 +86,7 @@
                     <li class="@Html.IsActiveRoute("Index", "TicketCenter")">
                         <a href="@Url.Action("Index", "TicketCenter", new {area = ""})"><i class="fa fa-ticket"></i> @_Layout.TicketCenter</a>
                     </li>
-                    @if (User.Identity.IsAuthenticated && !User.IsInRole("TdHelpDeskUsers"))
+                    @if (User.Identity.IsAuthenticated && !User.IsInRole("TdInternalUsers"))
                     {
                         <li class="@Html.IsActiveRoute("New", "Ticket")">
                             <a href="@Url.Action("New", "Ticket", new { area = "" })"><i class="fa fa-plus"></i> @_Layout.NewTicket</a>

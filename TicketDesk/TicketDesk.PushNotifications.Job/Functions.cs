@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Threading;
-using Microsoft.Azure.WebJobs;
 
 namespace TicketDesk.PushNotifications.Job
 {
@@ -21,7 +20,6 @@ namespace TicketDesk.PushNotifications.Job
             Console.Out.WriteLine("delivery complete");
         }
 
-        [NoAutomaticTrigger]
         public static void StartNotificationScheduler(int interval)
         {
             Console.Out.WriteLine("starting delivery timer");

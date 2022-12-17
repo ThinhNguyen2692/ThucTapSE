@@ -37,14 +37,13 @@ namespace TicketDesk.Domain
 
         public async Task<UserSetting> GetSettingsForUserAsync(string userId)
         {
-            var isHelpDeskUser = Context.SecurityProvider.IsTdHelpDeskUser ||
-                                    Context.SecurityProvider.IsTdAdministrator;
+            var IsTdInternalUser = Context.SecurityProvider.IsTdInternalUser;
             var settings = await Context.UserSettings.FindAsync(userId);
 
             //ensure settings exist
             if (settings == null )
             {
-                settings = UserSetting.GetDefaultSettingsForUser(userId, isHelpDeskUser);
+                settings = UserSetting.GetDefaultSettingsForUser(userId, IsTdInternalUser);
                 using (var tempCtx = new TdDomainContext())
                 {
                     await tempCtx.UserSettingsManager.AddOrUpdateSettingsForUser(settings);
@@ -52,11 +51,11 @@ namespace TicketDesk.Domain
                 }
             }
             //ensure that the user has all required lists for their role, if not blow away list settings and recreate
-            if (!settings.ListSettings.HasRequiredDefaultListSettings(isHelpDeskUser))
+            if (!settings.ListSettings.HasRequiredDefaultListSettings(IsTdInternalUser))
             {
                 settings.ListSettings = new UserTicketListSettingsCollection
                 {
-                    UserTicketListSetting.GetDefaultListSettings(userId, isHelpDeskUser)
+                    UserTicketListSetting.GetDefaultListSettings(userId, IsTdInternalUser)
                 };
                 using (var tempCtx = new TdDomainContext())
                 {

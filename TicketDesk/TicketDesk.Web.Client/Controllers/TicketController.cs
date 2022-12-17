@@ -83,6 +83,7 @@ namespace TicketDesk.Web.Client.Controllers
             var arrProject = Context.Projects.ToArray();
 
             newTicker.ProjectViewModels = new List<ProjectViewModelTicket>();
+            newTicker.ProjectViewModels.Add(new ProjectViewModelTicket());
             foreach (var item in arrProject)
             {
                 var project = new ProjectViewModelTicket();
@@ -92,9 +93,6 @@ namespace TicketDesk.Web.Client.Controllers
                 project.UserProjectViewModle = await GetUserProjectViewModle(item.ProjectUsers.ToList());
                 newTicker.ProjectViewModels.Add(project);
             }
-
-          
-          
 
             newTicker.json = Newtonsoft.Json.JsonConvert.SerializeObject(newTicker.ProjectViewModels);
           
@@ -232,6 +230,18 @@ namespace TicketDesk.Web.Client.Controllers
             return new UserProjectViewModle { UserId = user.Id, UserDisplayName = user.DisplayName};
         }
 
+        [Route("udatengay/{id}")]
+        [HttpGet]
+        public async Task<ActionResult> Update(int id)
+        {
+            var date = new DateTime(9999, 01, 01);
+            var connect = Context.Tickets.Where(t => t.TicketId == id).FirstOrDefault();
+            connect.TargetDate = date;
+           int x = await Context.SaveChangesAsync();
+
+            return Redirect("/ticket/" + id);
+
+        }
 
     }
 }

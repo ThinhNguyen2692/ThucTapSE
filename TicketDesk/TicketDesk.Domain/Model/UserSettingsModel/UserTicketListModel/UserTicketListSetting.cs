@@ -181,35 +181,37 @@ namespace TicketDesk.Domain.Model
                 unassignedFilterColumns.Add(new UserTicketListFilterColumn("AssignedTo", null, null, typeof(string)));
                 settings.Add(new UserTicketListSetting("unassigned", DefaultListName["unassigned"], disOrder++, 20, unassignedSortColumns, unassignedFilterColumns, disableAssignedColumn));
 
-                var assignedToMeSortColumns = new List<UserTicketListSortColumn>();
-                var assignedToMeFilterColumns = new List<UserTicketListFilterColumn>();
-                assignedToMeSortColumns.Add(new UserTicketListSortColumn("TicketStatus", ColumnSortDirection.Ascending));
-                assignedToMeSortColumns.Add(new UserTicketListSortColumn("TargetDate", ColumnSortDirection.Ascending));
-                assignedToMeSortColumns.Add(new UserTicketListSortColumn("DueDate", ColumnSortDirection.Ascending));
-                assignedToMeSortColumns.Add(new UserTicketListSortColumn("LastUpdateDate", ColumnSortDirection.Descending));
-                assignedToMeFilterColumns.Add(new UserTicketListFilterColumn("TicketStatus", false, TicketStatus.Closed));
-                assignedToMeFilterColumns.Add(new UserTicketListFilterColumn("AssignedTo", true, userId));
-                settings.Add(new UserTicketListSetting("assignedToMe", DefaultListName["assignedToMe"], disOrder++, 20, assignedToMeSortColumns, assignedToMeFilterColumns, disableAssignedColumn));
+                var openSortColumns = new List<UserTicketListSortColumn>();
+                var openFilterColumns = new List<UserTicketListFilterColumn>();
+                openSortColumns.Add(new UserTicketListSortColumn("TicketStatus", ColumnSortDirection.Ascending));
+                openSortColumns.Add(new UserTicketListSortColumn("TargetDate", ColumnSortDirection.Ascending));
+                openSortColumns.Add(new UserTicketListSortColumn("DueDate", ColumnSortDirection.Ascending));
+                openSortColumns.Add(new UserTicketListSortColumn("LastUpdateDate", ColumnSortDirection.Descending));
+                openFilterColumns.Add(new UserTicketListFilterColumn("TicketStatus", false, TicketStatus.Closed));
+                settings.Add(new UserTicketListSetting("opentickets", DefaultListName["opentickets"], disOrder++, 20, openSortColumns, openFilterColumns, disableStatusColumn));
+
+                var mySortColumns = new List<UserTicketListSortColumn>();
+                var myFilterColumns = new List<UserTicketListFilterColumn>();
+                mySortColumns.Add(new UserTicketListSortColumn("TargetDate", ColumnSortDirection.Ascending));
+                mySortColumns.Add(new UserTicketListSortColumn("DueDate", ColumnSortDirection.Ascending));
+                mySortColumns.Add(new UserTicketListSortColumn("LastUpdateDate", ColumnSortDirection.Descending));
+                myFilterColumns.Add(new UserTicketListFilterColumn("TicketStatus", false, TicketStatus.Closed));
+                myFilterColumns.Add(new UserTicketListFilterColumn("Owner", true, userId));
+                settings.Add(new UserTicketListSetting("mytickets", DefaultListName["mytickets"], disOrder++, 20, mySortColumns, myFilterColumns, disableOwnerColumn));
+
             }
 
-            var mySortColumns = new List<UserTicketListSortColumn>();
-            var myFilterColumns = new List<UserTicketListFilterColumn>();
-            mySortColumns.Add(new UserTicketListSortColumn("TargetDate", ColumnSortDirection.Ascending));
-            mySortColumns.Add(new UserTicketListSortColumn("DueDate", ColumnSortDirection.Ascending));
-            mySortColumns.Add(new UserTicketListSortColumn("LastUpdateDate", ColumnSortDirection.Descending));
-            myFilterColumns.Add(new UserTicketListFilterColumn("TicketStatus", false, TicketStatus.Closed));
-            myFilterColumns.Add(new UserTicketListFilterColumn("Owner", true, userId));
-            settings.Add(new UserTicketListSetting("mytickets", DefaultListName["mytickets"], disOrder++, 20, mySortColumns, myFilterColumns, disableOwnerColumn));
 
 
-            var openSortColumns = new List<UserTicketListSortColumn>();
-            var openFilterColumns = new List<UserTicketListFilterColumn>();
-            openSortColumns.Add(new UserTicketListSortColumn("TicketStatus", ColumnSortDirection.Ascending));
-            openSortColumns.Add(new UserTicketListSortColumn("TargetDate", ColumnSortDirection.Ascending));
-            openSortColumns.Add(new UserTicketListSortColumn("DueDate", ColumnSortDirection.Ascending));
-            openSortColumns.Add(new UserTicketListSortColumn("LastUpdateDate", ColumnSortDirection.Descending));
-            openFilterColumns.Add(new UserTicketListFilterColumn("TicketStatus", false, TicketStatus.Closed));
-            settings.Add(new UserTicketListSetting("opentickets", DefaultListName["opentickets"], disOrder++, 20, openSortColumns, openFilterColumns, disableStatusColumn));
+            var assignedToMeSortColumns = new List<UserTicketListSortColumn>();
+            var assignedToMeFilterColumns = new List<UserTicketListFilterColumn>();
+            assignedToMeSortColumns.Add(new UserTicketListSortColumn("TicketStatus", ColumnSortDirection.Ascending));
+            assignedToMeSortColumns.Add(new UserTicketListSortColumn("TargetDate", ColumnSortDirection.Ascending));
+            assignedToMeSortColumns.Add(new UserTicketListSortColumn("DueDate", ColumnSortDirection.Ascending));
+            assignedToMeSortColumns.Add(new UserTicketListSortColumn("LastUpdateDate", ColumnSortDirection.Descending));
+            assignedToMeFilterColumns.Add(new UserTicketListFilterColumn("TicketStatus", false, TicketStatus.Closed));
+            assignedToMeFilterColumns.Add(new UserTicketListFilterColumn("AssignedTo", true, userId));
+            settings.Add(new UserTicketListSetting("assignedToMe", DefaultListName["assignedToMe"], disOrder++, 20, assignedToMeSortColumns, assignedToMeFilterColumns, disableAssignedColumn));
 
 
             var historyticketsSortColumns = new List<UserTicketListSortColumn>();

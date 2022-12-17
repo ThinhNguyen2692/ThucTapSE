@@ -303,16 +303,5 @@ namespace TicketDesk.Web.Client.Controllers
 
 
 
-        [Route("udatengay/{id}")]
-        public async Task<ActionResult> Update(int id)
-        {
-            var date = new DateTime(9999, 01, 01);
-            var connect = Context.Tickets.Where(t => t.TicketId == id).FirstOrDefault();
-            connect.TargetDate = date;
-
-
-            return Redirect("/ticket/"+id);
-
-        }
     }
 }

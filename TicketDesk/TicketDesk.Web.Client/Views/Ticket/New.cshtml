@@ -128,7 +128,7 @@
                             <div class="form-group">
                                 @Html.LabelFor(model => model.Ticket.ProjectId, new { @class = "col-md-2 col-sm-1 control-label" })
                                 <div class="col-md-8 col-sm-11">
-                                    @*//  @Html.DropDownListFor(model => model.Ticket.ProjectId, Model.GetProjectList((int?)ViewBag.SelectedProjectId), new { @class = "form-control input-sm", id = "project", tabindex = 0 })*@
+                                   @*@Html.DropDownListFor(model => model.Ticket.ProjectId, , new { @class = "form-control input-sm", id = "project", tabindex = 0 })*@
                                     @Html.DropDownListFor(m => m.Ticket.ProjectId, new SelectList(Model.ProjectViewModels, "ProjectViewModel.ProjectId", "ProjectViewModel.ProjectName"), new { @class = "form-control input-sm", id = "project", tabindex = 0 })
                                     @Html.ValidationMessageFor(model => model.Ticket.ProjectId, "", new { @class = "text-danger" })
 
