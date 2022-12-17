@@ -34,7 +34,12 @@ namespace TicketDesk.Web.Identity.Model
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
-            userIdentity.AddClaim(new Claim(ClaimTypes.GivenName, DisplayName));
+            List<Claim> claims = new List<Claim>
+            {
+                new Claim(ClaimTypes.GivenName, DisplayName),
+                new Claim(ClaimTypes.CookiePath, Id)
+            };
+            userIdentity.AddClaims(claims);
             return userIdentity;
         }
     

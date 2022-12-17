@@ -33,7 +33,7 @@ namespace TicketDesk.Domain.Model
             DueDate = null;
             EstimatedDuration = null;
             ActualDuration = null;
-            TargetDate = null;
+          
             ResolutionDate = null;
             // ReSharper restore DoNotCallOverridableMethodsInConstructor
         }
@@ -47,15 +47,15 @@ namespace TicketDesk.Domain.Model
         public int ProjectId { get; set; }
 
 
-        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(Validation))]
-        [StringLength(50, ErrorMessageResourceName = "FieldMaximumLength", ErrorMessageResourceType = typeof(Validation))]
-        [Display(ResourceType = typeof(Strings), Name = "TicketTicketType", ShortName = "TicketTicketTypeShort")]
+        //[Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(Validation))]
+        //[StringLength(50, ErrorMessageResourceName = "FieldMaximumLength", ErrorMessageResourceType = typeof(Validation))]
+        //[Display(ResourceType = typeof(Strings), Name = "TicketTicketType", ShortName = "TicketTicketTypeShort")]
         public string TicketType { get; set; }
 
-        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(Validation))]
-        [StringLength(50, ErrorMessageResourceName = "FieldMaximumLength", ErrorMessageResourceType = typeof(Validation))]
-        [Display(ResourceType = typeof(Strings), Name = "TicketCategory", ShortName = "TicketCategoryShort")]
-        public string Category { get; set; }
+        //[Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(Validation))]
+        //[StringLength(50, ErrorMessageResourceName = "FieldMaximumLength", ErrorMessageResourceType = typeof(Validation))]
+        //[Display(ResourceType = typeof(Strings), Name = "TicketCategory", ShortName = "TicketCategoryShort")]
+        public string Category { get; set; } = null;
 
         [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(Validation))]
         [StringLength(500, ErrorMessageResourceName = "FieldMaximumLength", ErrorMessageResourceType = typeof(Validation))]
@@ -73,9 +73,8 @@ namespace TicketDesk.Domain.Model
         [Display(ResourceType = typeof(Strings), Name = "TicketTagList", ShortName = "TicketTagListShort")]
         public string TagList { get; set; }
 
-        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(Validation))]
-        [StringLength(256, ErrorMessageResourceName = "FieldMaximumLength", ErrorMessageResourceType = typeof(Validation))]
-        [Display(ResourceType = typeof(Strings), Name = "TicketCreatedBy", ShortName = "TicketCreatedByShort")]
+        //[Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(Validation))]
+        //[StringLength(256, ErrorMessageResourceName = "FieldMaximumLength", ErrorMessageResourceType = typeof(Validation))]
         public string CreatedBy { get; set; }
 
 
@@ -86,7 +85,7 @@ namespace TicketDesk.Domain.Model
 
         //ngày mục tiêu hết hạn
         [Display(ResourceType = typeof(Strings), Name = "TicketTargetDate", ShortName = "TicketTargetDateShort")]
-        public DateTimeOffset? TargetDate { get; set; }
+        public DateTimeOffset TargetDate { get; set; }
 
 
         [Display(ResourceType = typeof(Strings), Name = "TicketResolutionDate", ShortName = "TickeResolutionDateShort")]
@@ -160,22 +159,17 @@ namespace TicketDesk.Domain.Model
         {
             get
             {
-                return TargetDate.HasValue ? TargetDate.Value.Date.ToShortDateString() : string.Empty;
+                return TargetDate.Date.ToShortDateString();
             }
             set
             {
-                if (string.IsNullOrEmpty((value ?? string.Empty).Trim()))
-                {
-                    this.TargetDate = null;
-                }
-                else
-                {
+                
                     DateTime dt;
                     if (DateTime.TryParse(value, out dt))
                     {
                         this.TargetDate = dt;
                     }
-                }
+          
             }
         }
 
@@ -406,5 +400,7 @@ namespace TicketDesk.Domain.Model
         {
             ticketAction(this);
         }
+
+     
     }
 }

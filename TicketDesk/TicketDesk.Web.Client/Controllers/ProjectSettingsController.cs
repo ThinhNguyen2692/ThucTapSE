@@ -41,7 +41,7 @@ namespace TicketDesk.Web.Client.Controllers
         [Route("project/new")]
         public async Task<ActionResult> New()
         {
-            ProjectViewModel viewModel = new ProjectViewModel();
+            ProjectNew viewModel = new ProjectNew();
 
            viewModel.UserProjectViewModles = await GetUserByRole("fa3e7fd0-061c-4b32-bc69-d5c7e79c105f");
             return View(viewModel);
@@ -49,7 +49,7 @@ namespace TicketDesk.Web.Client.Controllers
 
         [Route("project/new")]
         [HttpPost]
-        public async Task<ActionResult> New(ProjectViewModel projectViewModel)
+        public async Task<ActionResult> New(ProjectViewModel projectViewModel, List<string> UserIds)
         {
             if (ModelState.IsValid)
             {
@@ -57,9 +57,9 @@ namespace TicketDesk.Web.Client.Controllers
                 project.ProjectName = projectViewModel.ProjectName;
                 project.ProjectDescription = projectViewModel.ProjectDescription;
                 project.ReasonableTime = projectViewModel.ReasonableTime;
-                foreach (var item in projectViewModel.UserIds)
+                foreach (var item in UserIds)
                 {
-                    project.ProjectUsers.Add(new ProjectUser { ID = 0, ProjectId = project.ProjectId,UserId = item});
+                    project.ProjectUsers.Add(new ProjectUser { ID = 0, ProjectId = project.ProjectId, UserId = item });
                 }
                 Context.Projects.Add(project);
                 if (await Context.SaveChangesAsync() > 0)
@@ -68,9 +68,9 @@ namespace TicketDesk.Web.Client.Controllers
                 }
             }
             ModelState.AddModelError("", Strings.UnableToCreateProject);
-            ProjectViewModel viewModel = new ProjectViewModel();
+            ProjectNew viewModel = new ProjectNew();
             viewModel.UserProjectViewModles = await GetUserByRole("fa3e7fd0-061c-4b32-bc69-d5c7e79c105f");
-            return View(viewModel);
+            return View(projectViewModel);
         }
 
         [Route("project/delete/{projectId:int}")]

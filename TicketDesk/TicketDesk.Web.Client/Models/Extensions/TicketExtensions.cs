@@ -146,6 +146,8 @@ namespace TicketDesk.Domain.Model
             return includeEmptyText ? all.ToUserSelectList(ticket.AssignedTo, Strings.AssignedTo_Unassigned) : all.ToUserSelectList(false, ticket.AssignedTo);
         }
 
+     
+
         public static bool AllowEditTags(this Ticket ticket)
         {
             //TODO: is this the best place to put this check?

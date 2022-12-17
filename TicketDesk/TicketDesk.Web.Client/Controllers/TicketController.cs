@@ -11,6 +11,7 @@
 // attribution must remain intact, and a copy of the license must be 
 // provided to the recipient.
 
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -24,6 +25,7 @@ using TicketDesk.Domain.Model;
 using TicketDesk.IO;
 using TicketDesk.Localization.Controllers;
 using TicketDesk.Web.Client.Models;
+using TicketDesk.Web.Identity;
 
 namespace TicketDesk.Web.Client.Controllers
 {
@@ -36,9 +38,13 @@ namespace TicketDesk.Web.Client.Controllers
     public class TicketController : Controller
     {
         private TdDomainContext Context { get; set; }
-        public TicketController(TdDomainContext context)
+        private TdIdentityContext _idIdentityContext { get; set; }
+        private TicketDeskUserManager UserManager { get; set; }
+        public TicketController(TdDomainContext context, TdIdentityContext _idIdentityContext, TicketDeskUserManager UserManager)
         {
             Context = context;
+            this._idIdentityContext = _idIdentityContext;
+            this.UserManager = UserManager;
         }
 
         public RedirectToRouteResult Index()
@@ -49,7 +55,7 @@ namespace TicketDesk.Web.Client.Controllers
         [Route("{id:int}")]
         public async Task<ActionResult> Index(int id)
         {
-           
+
             var model = await Context.Tickets.Include(t => t.TicketSubscribers).FirstOrDefaultAsync(t => t.TicketId == id);
             if (model == null)
             {
@@ -63,29 +69,36 @@ namespace TicketDesk.Web.Client.Controllers
         [Route("new")]
         public async Task<ActionResult> New()
         {
+
             var newTicker = new NewTicker();
 
             newTicker.Ticket = new Ticket
             {
-                Owner = Context.SecurityProvider.CurrentUserId,
+               Owner = User.Identity.GetUserID(),
                 IsHtml = Context.TicketDeskSettings.ClientSettings.GetDefaultTextEditorType() == "summernote"
             };
-
+            
             await SetProjectInfoForModelAsync(newTicker.Ticket);
            
             var arrProject = Context.Projects.ToArray();
 
-            newTicker.ProjectViewModels = new List<ProjectViewModel>();
+            newTicker.ProjectViewModels = new List<ProjectViewModelTicket>();
             foreach (var item in arrProject)
             {
-                var project = new ProjectViewModel();
-                project.ProjectId = item.ProjectId;
-                project.ProjectName = item.ProjectName;
-                project.ReasonableTime = item.ReasonableTime;
+                var project = new ProjectViewModelTicket();
+                project.ProjectViewModel.ProjectId = item.ProjectId;
+                project.ProjectViewModel.ProjectName = item.ProjectName;
+                project.ProjectViewModel.ReasonableTime = item.ReasonableTime;
+                project.UserProjectViewModle = await GetUserProjectViewModle(item.ProjectUsers.ToList());
                 newTicker.ProjectViewModels.Add(project);
             }
+
+          
+          
+
             newTicker.json = Newtonsoft.Json.JsonConvert.SerializeObject(newTicker.ProjectViewModels);
           
+            ViewBag.TempId = Guid.NewGuid();
             return View(newTicker);
         }
 
@@ -205,6 +218,20 @@ namespace TicketDesk.Web.Client.Controllers
 
             return ticket.TicketId != default(int);
         }
+
+        public async Task<UserProjectViewModle> GetUserProjectViewModle(List<ProjectUser> projectUsers)
+        {
+            if(projectUsers.Count == 0)
+            {
+                return null;
+            }
+            Random rand = new Random(); 
+            var shuffled = projectUsers.OrderBy(_ => rand.Next()).FirstOrDefault();
+            var user = await UserManager.FindByIdAsync(shuffled.UserId);
+            if(user.LockoutEndDateUtc != null) {GetUserProjectViewModle(projectUsers);  }
+            return new UserProjectViewModle { UserId = user.Id, UserDisplayName = user.DisplayName};
+        }
+
 
     }
 }

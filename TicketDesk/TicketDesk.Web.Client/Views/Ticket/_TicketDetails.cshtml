@@ -104,7 +104,7 @@
                                 @Model.TicketStatus.GetDisplayName()
                             </div>
                         </div>
-                        <div class="row">
+                        @*<div class="row">
                             @Html.LabelFor(m => m.DueDate, new { @class = "col-sm-5 col-lg-4 text-right" })
                             <div class="col-sm-7 col-lg-8">
                                 @if (Model.DueDate.HasValue)
@@ -112,7 +112,7 @@
                                     @Model.DueDateAsString
                                 }
                             </div>
-                        </div>
+                        </div>*@
                         <div class="row">
                             @Html.LabelFor(m => m.TargetDate, new { @class = "col-sm-5 col-lg-4 text-right" })
                             <div class="col-sm-7 col-lg-8">
@@ -122,7 +122,7 @@
                                 }
                             </div>
                         </div>
-                        <div class="row">
+                        @*<div class="row">
                             @Html.LabelFor(m => m.ResolutionDate, new { @class = "col-sm-5 col-lg-4 text-right" })
                             <div class="col-sm-7 col-lg-8">
                                 @if (Model.ResolutionDate.HasValue)
@@ -130,7 +130,7 @@
                                     @Model.ResolutionDateAsString
                                 }
                             </div>
-                        </div>
+                        </div>*@
                         <div class="row">
                             @Html.LabelFor(m => m.LastUpdateBy, new {@class = "col-sm-5 col-lg-4 text-right"})
                             <div class="col-sm-7 col-lg-8">

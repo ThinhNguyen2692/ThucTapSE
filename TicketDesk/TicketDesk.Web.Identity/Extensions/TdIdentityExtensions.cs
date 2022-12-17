@@ -43,5 +43,20 @@ namespace TicketDesk.Web.Identity
             }
             return null;
         }
+
+        public static string GetUserID(this IIdentity identity)
+        {
+            if (identity == null)
+            {
+                throw new ArgumentNullException("identity");
+            }
+            var ci = identity as ClaimsIdentity;
+            if (ci != null)
+            {
+                return ci.FindFirstValue(ClaimTypes.CookiePath);
+            }
+            return null;
+        }
+
     }
 }

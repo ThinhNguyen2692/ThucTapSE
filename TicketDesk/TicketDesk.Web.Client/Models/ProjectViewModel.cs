@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Helpers;
 using TicketDesk.Domain.Model;
 using TicketDesk.Localization.Controllers;
+using TicketDesk.Web.Identity;
 using TicketDesk.Web.Identity.Model;
 
 namespace TicketDesk.Web.Client.Models
@@ -13,6 +14,7 @@ namespace TicketDesk.Web.Client.Models
     public class ProjectViewModel
     {
         public ProjectViewModel() { }
+
 
         public int ProjectId { get; set; }
 
@@ -24,16 +26,28 @@ namespace TicketDesk.Web.Client.Models
         public string ProjectDescription { get; set; }
 
 
-        [Display(Name ="Thời gian xử lý")]
+        [Display(Name = "Thời gian xử lý")]
         public int? ReasonableTime { get; set; }
 
-        
+    }
+
+    public class ProjectNew
+    {
+        public ProjectNew() {
+            projectViewModel = new ProjectViewModel();
+            UserProjectViewModles = new List<UserProjectViewModle>();
+            UserIds = new List<string>();
+        }
+
+        public ProjectViewModel projectViewModel { get; set; }
+
         [Display(Name = "Danh sách user ")]
         public List<UserProjectViewModle> UserProjectViewModles { get; set; }
 
         [Required]
-        public List<string> UserIds { get; set; }
+        public List<string> UserIds { get; set; } 
     }
+
 
     public class UserProjectViewModle
     {
@@ -47,8 +61,29 @@ namespace TicketDesk.Web.Client.Models
         public NewTicker() { }
 
         public Ticket Ticket { get; set; }
-        public List<ProjectViewModel> ProjectViewModels { get; set; } = new List<ProjectViewModel>();
+        public List<ProjectViewModelTicket> ProjectViewModels { get; set; } = new List<ProjectViewModelTicket>();
         public string json { get; set; }
+
+        //random 1 user xử lý.
+        public string GetOwner(List<UserProjectViewModle> userProjectViewModles)
+        {
+            Random rand = new Random();
+            var shuffled = userProjectViewModles.OrderBy(_ => rand.Next()).First();
+            return shuffled.UserId;
+        }
+
+
     }
-    
+
+    public class ProjectViewModelTicket{
+           public ProjectViewModelTicket() {
+            ProjectViewModel = new ProjectViewModel();
+            UserProjectViewModle = new UserProjectViewModle();
+        }
+        public ProjectViewModel ProjectViewModel { get; set; }
+        public UserProjectViewModle UserProjectViewModle { get; set; }
+
+      
+    }
+
 }
