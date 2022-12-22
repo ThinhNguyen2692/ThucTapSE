@@ -18,7 +18,7 @@ using TicketDesk.Web.Identity.Model;
 
 namespace TicketDesk.Web.Client.Controllers
 {
-    [RoutePrefix("admin")]
+    [RoutePrefix("admincontrol")]
     [Route("{action=index}")]
     [TdAuthorize(Roles = "TdAdministrators")]
     public class UserAdministrationController : Controller

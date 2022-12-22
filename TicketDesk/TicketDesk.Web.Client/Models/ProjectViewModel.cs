@@ -48,10 +48,10 @@ namespace TicketDesk.Web.Client.Models
         public List<string> UserIds { get; set; } 
     }
 
-
     public class UserProjectViewModle
     {
         public UserProjectViewModle() { }
+        [Display(Name = "Danh sách user ")]
         public string UserId { get; set; }
         public string UserDisplayName { get; set; }
     }

@@ -37,7 +37,9 @@ namespace TicketDesk.Web.Identity.Model
             List<Claim> claims = new List<Claim>
             {
                 new Claim(ClaimTypes.GivenName, DisplayName),
-                new Claim(ClaimTypes.CookiePath, Id)
+
+                new Claim(ClaimTypes.CookiePath, Id),
+                new Claim(ClaimTypes.Email, Email)
             };
             userIdentity.AddClaims(claims);
             return userIdentity;

@@ -16,6 +16,8 @@ using System.Configuration;
 using System.Data.Entity;
 using System.Globalization;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Security;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +26,8 @@ using TicketDesk.Domain;
 using TicketDesk.Domain.Model;
 using TicketDesk.IO;
 using TicketDesk.Localization.Controllers;
+using TicketDesk.Web.Identity;
+using TicketDesk.Web.Identity.Model;
 
 namespace TicketDesk.Web.Client.Controllers
 {
@@ -34,9 +38,11 @@ namespace TicketDesk.Web.Client.Controllers
     public class TicketActivityController : Controller
     {
         private TdDomainContext Context { get; set; }
-        public TicketActivityController(TdDomainContext context)
+        private TdIdentityContext _idIdentityContext { get; set; }
+        public TicketActivityController(TdDomainContext context, TdIdentityContext _idIdentityContext)
         {
             Context = context;
+            this._idIdentityContext = _idIdentityContext;
         }
 
         [Route("load-activity")]
@@ -139,6 +145,7 @@ namespace TicketDesk.Web.Client.Controllers
         public async Task<ActionResult> ForceClose(int ticketId, [ModelBinder(typeof(SummernoteModelBinder))] string comment)
         {
             var activityFn = Context.TicketActions.ForceClose(comment);
+          
             return await PerformTicketAction(ticketId, activityFn, TicketActivity.ForceClose);
         }
 
@@ -301,7 +308,8 @@ namespace TicketDesk.Web.Client.Controllers
             return PartialView("_ActivityForm", ticket);
         }
 
+      
 
-
+       
     }
 }

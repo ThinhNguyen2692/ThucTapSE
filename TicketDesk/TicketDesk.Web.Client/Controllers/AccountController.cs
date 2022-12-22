@@ -92,10 +92,7 @@ namespace TicketDesk.Web.Client.Controllers
         [HttpPost]
         public async Task<ActionResult> EditProfile(AccountProfileViewModel model)
         {
-            if (!ModelState.IsValid)
-            {
-                return View(model);
-            }
+            
             var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
             var oldEmail = user.Email;
 

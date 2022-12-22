@@ -14,7 +14,7 @@ using System;
 
 namespace TicketDesk.Web.Client.Controllers
 {
-    [RoutePrefix("admin")]
+    [RoutePrefix("adminproject")]
     [Route("{action=index}")]
     [TdAuthorize(Roles = "TdAdministrators,TdHelpDeskUsers")]
     public class ProjectSettingsController : Controller
@@ -22,8 +22,8 @@ namespace TicketDesk.Web.Client.Controllers
 
           private TdDomainContext Context { get; set; }
         private TdIdentityContext _idIdentityContext { get; set; }
-       
 
+        private string _RoleName = "TdInternalUsers";
         public ProjectSettingsController(TdDomainContext context, TdIdentityContext _idIdentityContext)
         {
             Context = context;
@@ -69,7 +69,7 @@ namespace TicketDesk.Web.Client.Controllers
             }
             ModelState.AddModelError("", Strings.UnableToCreateProject);
             ProjectNew viewModel = new ProjectNew();
-            viewModel.UserProjectViewModles = await GetUserByRole("05a83c59-20cd-409b-b424-ea5f5f15a835");
+            viewModel.UserProjectViewModles = await GetUserByRole(GetIdRoles(_RoleName));
             return View(projectViewModel);
         }
 
@@ -144,7 +144,7 @@ namespace TicketDesk.Web.Client.Controllers
         private async Task<List<UserProjectViewModle>> GetUserByRole(string roleId)
         {
 
-            var role = await _idIdentityContext.Roles.Where(r => r.Id == roleId).FirstOrDefaultAsync();
+           
             var users = _idIdentityContext.Users.Where(u => u.LockoutEndDateUtc == null && u.Roles.Where(r => r.RoleId == roleId).ToList().Count > 0)
              .Select(u => new UserProjectViewModle { UserId = u.Id, UserDisplayName = u.DisplayName})
                 .ToListAsync();
@@ -152,6 +152,13 @@ namespace TicketDesk.Web.Client.Controllers
 
             return await users;
         
+        }
+
+        public string GetIdRoles(string roleName)
+        {
+
+            var role = _idIdentityContext.Roles.Where(r => r.Name == roleName).FirstOrDefault().Id;
+            return role;
         }
 
         private async Task AddViewDataForEdit(int projectId)
