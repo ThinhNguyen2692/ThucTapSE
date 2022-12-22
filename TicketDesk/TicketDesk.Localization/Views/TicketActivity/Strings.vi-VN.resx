@@ -117,25 +117,59 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AssignedTo" xml:space="preserve">
-    <value>&lt;b&gt;Người thực hiện:&lt;/b&gt; {0}</value>
+  <data name="AffectsCustomer_Label" xml:space="preserve">
+    <value>Affects Customer</value>
   </data>
-  <data name="Legend" xml:space="preserve">
-    <value>Tìm kiếm</value>
+  <data name="Attachments_Label" xml:space="preserve">
+    <value>Files</value>
   </data>
-  <data name="OwnedBy" xml:space="preserve">
-    <value>&lt;b&gt;Người yêu cầu:&lt;/b&gt; {0}</value>
+  <data name="Attachment_Demo_Alert" xml:space="preserve">
+    <value>&lt;p&gt;TicketDesk is running demo mode. Attachment Uploads are disabled.&lt;/p&gt;
+                            &lt;p&gt; To turn off demo mode, please change the setting in application configuration.&lt;/p&gt;</value>
   </data>
-  <data name="Priority" xml:space="preserve">
-    <value>{0} Priority</value>
+  <data name="Attachment_Instructions" xml:space="preserve">
+    <value>Drop attachments here, or click to select files.</value>
   </data>
-  <data name="Title" xml:space="preserve">
-    <value>Tìm kiếm khiếu nại</value>
+  <data name="Comment_EditOption" xml:space="preserve">
+    <value>Edit</value>
   </data>
-  <data name="Unassigned" xml:space="preserve">
-    <value>Chưa xác định</value>
+  <data name="Comment_Label" xml:space="preserve">
+    <value>Phản hồi</value>
   </data>
-  <data name="UpdatedBy" xml:space="preserve">
-    <value>&lt;b&gt;Người cập nhật&lt;/b&gt; {0} &lt;b&gt;at&lt;/b&gt; {1} {2}</value>
+  <data name="Comment_PreviewOption" xml:space="preserve">
+    <value>Preview</value>
+  </data>
+  <data name="Details_EditOption" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="Details_Label" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="Details_PreviewOption" xml:space="preserve">
+    <value>Preview</value>
+  </data>
+  <data name="Form_CancelOption" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Form_TicketTitle_Placeholder" xml:space="preserve">
+    <value>Ticket title</value>
+  </data>
+  <data name="ReOpen_AssignToMe" xml:space="preserve">
+    <value>Assign to me?</value>
+  </data>
+  <data name="ReOpen_Instructions" xml:space="preserve">
+    <value>Check this box to assign the ticket to yourself now. If unchecked the ticket will be re-opened as unassigned.</value>
+  </data>
+  <data name="ReOpen_Label" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="SupplyMoreInfo_Instructions" xml:space="preserve">
+    <value>Uncheck this to supply information without changing the ticket's status.</value>
+  </data>
+  <data name="SupplyMoreInfo_Label" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="SupplyMoreInfo_ReactivateTicket" xml:space="preserve">
+    <value>Reactivate Ticket</value>
   </data>
 </root>

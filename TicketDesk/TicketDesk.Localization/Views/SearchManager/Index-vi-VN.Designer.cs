@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TicketDesk.Localization.Views.Search {
+namespace TicketDesk.Localization.Views.SearchManager {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace TicketDesk.Localization.Views.Search {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class Index {
+    public class Index_vi_VN {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Index() {
+        internal Index_vi_VN() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace TicketDesk.Localization.Views.Search {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("TicketDesk.Localization.Views.Search.Index", typeof(Index).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("TicketDesk.Localization.Views.SearchManager.Index-vi-VN", typeof(Index_vi_VN).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,65 +61,56 @@ namespace TicketDesk.Localization.Views.Search {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;b&gt;Người thực hiện:&lt;/b&gt; {0}.
+        ///   Looks up a localized string similar to Quản lý tìm kiếm.
         /// </summary>
-        public static string AssignedTo {
+        public static string Header {
             get {
-                return ResourceManager.GetString("AssignedTo", resourceCulture);
+                return ResourceManager.GetString("Header", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tìm kiếm.
+        ///   Looks up a localized string similar to Khu vực.
         /// </summary>
-        public static string Legend {
+        public static string Populated {
             get {
-                return ResourceManager.GetString("Legend", resourceCulture);
+                return ResourceManager.GetString("Populated", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;b&gt;Người yêu cầu:&lt;/b&gt; {0}.
+        ///   Looks up a localized string similar to Điền mục tìm kiếm.
         /// </summary>
-        public static string OwnedBy {
+        public static string PopulateSearchIndex {
             get {
-                return ResourceManager.GetString("OwnedBy", resourceCulture);
+                return ResourceManager.GetString("PopulateSearchIndex", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} Priority.
+        ///   Looks up a localized string similar to Gỡ bỏ.
         /// </summary>
-        public static string Priority {
+        public static string Removed {
             get {
-                return ResourceManager.GetString("Priority", resourceCulture);
+                return ResourceManager.GetString("Removed", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tìm kiếm khiếu nại.
+        ///   Looks up a localized string similar to Xóa mục tìm kiếm.
+        /// </summary>
+        public static string RemoveSearchIndex {
+            get {
+                return ResourceManager.GetString("RemoveSearchIndex", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Trình quản lý tìm kiếm.
         /// </summary>
         public static string Title {
             get {
                 return ResourceManager.GetString("Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Chưa xác định.
-        /// </summary>
-        public static string Unassigned {
-            get {
-                return ResourceManager.GetString("Unassigned", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;b&gt;Người cập nhật&lt;/b&gt; {0} &lt;b&gt;at&lt;/b&gt; {1} {2}.
-        /// </summary>
-        public static string UpdatedBy {
-            get {
-                return ResourceManager.GetString("UpdatedBy", resourceCulture);
             }
         }
     }

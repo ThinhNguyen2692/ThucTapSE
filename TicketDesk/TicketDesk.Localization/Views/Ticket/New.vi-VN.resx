@@ -117,25 +117,44 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AssignedTo" xml:space="preserve">
-    <value>&lt;b&gt;Người thực hiện:&lt;/b&gt; {0}</value>
+  <data name="AffectsCustomer" xml:space="preserve">
+    <value>Ảnh hưởng đến khách hàng</value>
   </data>
-  <data name="Legend" xml:space="preserve">
-    <value>Tìm kiếm</value>
+  <data name="Attachment_Demo_Alert" xml:space="preserve">
+    <value>&lt;p&gt;TicketDesk is running demo mode. Attachment Uploads are disabled.&lt;/p&gt;
+                                            &lt;p&gt; To turn off demo mode, please change the setting in application configuration.&lt;/p&gt;</value>
   </data>
-  <data name="OwnedBy" xml:space="preserve">
-    <value>&lt;b&gt;Người yêu cầu:&lt;/b&gt; {0}</value>
+  <data name="Attachment_Instructions" xml:space="preserve">
+    <value>Thả tệp đính kèm tại đây hoặc nhấp để chọn tệp.</value>
   </data>
-  <data name="Priority" xml:space="preserve">
-    <value>{0} Priority</value>
+  <data name="BackOption" xml:space="preserve">
+    <value>Trở lại danh sách</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Chi tiết</value>
+  </data>
+  <data name="EditOption" xml:space="preserve">
+    <value>Chỉnh sửa</value>
+  </data>
+  <data name="Files" xml:space="preserve">
+    <value>Files</value>
+  </data>
+  <data name="Header" xml:space="preserve">
+    <value>Tạo mới khuyến nại</value>
+  </data>
+  <data name="PreviewOption" xml:space="preserve">
+    <value>Preview</value>
+  </data>
+  <data name="SaveOption" xml:space="preserve">
+    <value>Gửi khiếu nại</value>
+  </data>
+  <data name="TicketTitle_Placeholder" xml:space="preserve">
+    <value>Tiêu đề khiếu nại</value>
   </data>
   <data name="Title" xml:space="preserve">
-    <value>Tìm kiếm khiếu nại</value>
+    <value>Gửi khiếu nại</value>
   </data>
-  <data name="Unassigned" xml:space="preserve">
-    <value>Chưa xác định</value>
-  </data>
-  <data name="UpdatedBy" xml:space="preserve">
-    <value>&lt;b&gt;Người cập nhật&lt;/b&gt; {0} &lt;b&gt;at&lt;/b&gt; {1} {2}</value>
+  <data name="UnableCreateTicket" xml:space="preserve">
+    <value>Không thể gửi khuyến nại vui lòng sửa bên trên</value>
   </data>
 </root>

@@ -646,7 +646,7 @@ namespace TicketDesk.Localization.Domain {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Created By.
+        ///   Looks up a localized string similar to Người tạo.
         /// </summary>
         public static string TicketCreatedBy {
             get {
@@ -655,7 +655,7 @@ namespace TicketDesk.Localization.Domain {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Created By.
+        ///   Looks up a localized string similar to Người tạo.
         /// </summary>
         public static string TicketCreatedByShort {
             get {

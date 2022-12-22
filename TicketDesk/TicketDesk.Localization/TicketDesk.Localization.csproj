@@ -62,6 +62,11 @@
       <DependentUpon>Strings.resx</DependentUpon>
     </Compile>
     <Compile Include="CultureHelper.cs" />
+    <Compile Include="Domain\Strings.vi-VN.Designer.cs">
+      <DependentUpon>Strings.vi-VN.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Domain\Strings.pt-BR.Designer.cs">
       <DependentUpon>Strings.pt-BR.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -123,6 +128,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Strings.resx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Account\ChangePassword.vi-VN.Designer.cs">
+      <DependentUpon>ChangePassword.vi-VN.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Views\Account\ChangePassword.pt-BR.Designer.cs">
       <DependentUpon>ChangePassword.pt-BR.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -132,6 +142,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ChangePassword.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Account\EditProfile.vi-VN.Designer.cs">
+      <DependentUpon>EditProfile.vi-VN.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Views\Account\EditProfile.pt-BR.Designer.cs">
       <DependentUpon>EditProfile.pt-BR.resx</DependentUpon>
@@ -143,6 +158,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EditProfile.resx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Account\Manage.vi-VN.Designer.cs">
+      <DependentUpon>Manage.vi-VN.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Views\Account\Manage.pt-BR.Designer.cs">
       <DependentUpon>Manage.pt-BR.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -152,6 +172,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Manage.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ApplicationSettings\Index.vi-VN.Designer.cs">
+      <DependentUpon>Index.vi-VN.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Views\ApplicationSettings\Index.pt-BR.Designer.cs">
       <DependentUpon>Index.pt-BR.resx</DependentUpon>
@@ -208,6 +233,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AccessDenied.resx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Home\Index.vi-VN.Designer.cs">
+      <DependentUpon>Index.vi-VN.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Views\Home\Index.pt-BR.Designer.cs">
       <DependentUpon>Index.pt-BR.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -219,6 +249,11 @@
       <DependentUpon>Index.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\ProjectSettings\Edit.vi-VN.Designer.cs">
+      <DependentUpon>Edit.vi-VN.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Views\ProjectSettings\Edit.pt-BR.Designer.cs">
       <DependentUpon>Edit.pt-BR.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -229,6 +264,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Edit.resx</DependentUpon>
     </Compile>
+    <Compile Include="Views\ProjectSettings\Index.vi-VN.Designer.cs">
+      <DependentUpon>Index.vi-VN.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Views\ProjectSettings\Index.pt-BR.Designer.cs">
       <DependentUpon>Index.pt-BR.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -238,6 +278,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Index.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProjectSettings\New.vi-VN.Designer.cs">
+      <DependentUpon>New.vi-VN.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Views\ProjectSettings\New.pt-BR.Designer.cs">
       <DependentUpon>New.pt-BR.resx</DependentUpon>
@@ -279,6 +324,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ListDeliveryProviderSettings.resx</DependentUpon>
     </Compile>
+    <Compile Include="Views\SearchManager\Index-vi-VN.Designer.cs">
+      <DependentUpon>Index-vi-VN.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Views\SearchManager\Index.pt-BR.Designer.cs">
       <DependentUpon>Index.pt-BR.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -289,15 +339,25 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Index.resx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Search\Index.vi-VN1.Designer.cs">
+      <DependentUpon>Index.vi-VN.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Views\Search\Index.Designer.cs">
+      <DependentUpon>Index.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Views\Search\Index.pt-BR.Designer.cs">
       <DependentUpon>Index.pt-BR.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Views\Search\Index.Designer.cs">
+    <Compile Include="Views\Shared\Error.vi-VN.Designer.cs">
+      <DependentUpon>Error.vi-VN.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Index.resx</DependentUpon>
     </Compile>
     <Compile Include="Views\Shared\Error.pt-BR.Designer.cs">
       <DependentUpon>Error.pt-BR.resx</DependentUpon>
@@ -309,6 +369,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Error.resx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Shared\Lockout.vi-VN.Designer.cs">
+      <DependentUpon>Lockout.vi-VN.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Views\Shared\Lockout.pt-BR.Designer.cs">
       <DependentUpon>Lockout.pt-BR.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -318,6 +383,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Lockout.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\_Layout.vi-VN.Designer.cs">
+      <DependentUpon>_Layout.vi-VN.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Views\Shared\_Layout.pt-BR.Designer.cs">
       <DependentUpon>_Layout.pt-BR.resx</DependentUpon>
@@ -329,6 +399,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_Layout.resx</DependentUpon>
     </Compile>
+    <Compile Include="Views\TicketActivity\Strings.vi-VN.Designer.cs">
+      <DependentUpon>Strings.vi-VN.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Views\TicketActivity\Strings.pt-BR.Designer.cs">
       <DependentUpon>Strings.pt-BR.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -338,6 +413,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TicketCenter\Index.vi-VN.Designer.cs">
+      <DependentUpon>Index.vi-VN.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Views\TicketCenter\Index.pt-BR.Designer.cs">
       <DependentUpon>Index.pt-BR.resx</DependentUpon>
@@ -349,15 +429,25 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Index.resx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Ticket\Index.Designer.cs">
+      <DependentUpon>Index.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Views\Ticket\Index.pt-BR.Designer.cs">
       <DependentUpon>Index.pt-BR.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Views\Ticket\Index.Designer.cs">
+    <Compile Include="Views\Ticket\Index.vi-VN.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Index.resx</DependentUpon>
+      <DependentUpon>Index.vi-VN.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Ticket\New.vi-VN.Designer.cs">
+      <DependentUpon>New.vi-VN.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Views\Ticket\New.pt-BR.Designer.cs">
       <DependentUpon>New.pt-BR.resx</DependentUpon>
@@ -435,6 +525,11 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Domain\Strings.vi-VN.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.vi-VN.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Domain\Strings.de-DE.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -494,6 +589,10 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Account\ChangePassword.vi-VN.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ChangePassword.vi-VN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Account\ChangePassword.de-DE.resx" />
     <EmbeddedResource Include="Views\Account\ChangePassword.pt-BR.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -502,6 +601,10 @@
     <EmbeddedResource Include="Views\Account\ChangePassword.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ChangePassword.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Account\EditProfile.vi-VN.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>EditProfile.vi-VN.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Account\EditProfile.de-DE.resx" />
     <EmbeddedResource Include="Views\Account\EditProfile.pt-BR.resx">
@@ -512,6 +615,10 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>EditProfile.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Account\Manage.vi-VN.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Manage.vi-VN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Account\Manage.de-DE.resx" />
     <EmbeddedResource Include="Views\Account\Manage.pt-BR.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -520,6 +627,10 @@
     <EmbeddedResource Include="Views\Account\Manage.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Manage.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ApplicationSettings\Index.vi-VN.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.vi-VN.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ApplicationSettings\Index.de-DE.resx" />
     <EmbeddedResource Include="Views\ApplicationSettings\Index.pt-BR.resx">
@@ -572,6 +683,10 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AccessDenied.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Home\Index.vi-VN.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.vi-VN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Home\Index.de-DE.resx" />
     <EmbeddedResource Include="Views\Home\Index.pt-BR.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -580,6 +695,10 @@
     <EmbeddedResource Include="Views\Home\Index.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Index.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ProjectSettings\Edit.vi-VN.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.vi-VN.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ProjectSettings\Edit.de-DE.resx" />
     <EmbeddedResource Include="Views\ProjectSettings\Edit.pt-BR.resx">
@@ -590,6 +709,10 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Edit.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\ProjectSettings\Index.vi-VN.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.vi-VN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\ProjectSettings\Index.de-DE.resx" />
     <EmbeddedResource Include="Views\ProjectSettings\Index.pt-BR.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -598,6 +721,10 @@
     <EmbeddedResource Include="Views\ProjectSettings\Index.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Index.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ProjectSettings\New.vi-VN.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>New.vi-VN.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ProjectSettings\New.de-DE.resx" />
     <EmbeddedResource Include="Views\ProjectSettings\New.pt-BR.resx">
@@ -635,6 +762,10 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ListDeliveryProviderSettings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\SearchManager\Index-vi-VN.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index-vi-VN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\SearchManager\Index.de-DE.resx" />
     <EmbeddedResource Include="Views\SearchManager\Index.pt-BR.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -644,6 +775,16 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Index.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Search\Index.vi-VN.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.vi-VN1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Search\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Search\Index.de-DE.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -651,10 +792,9 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Index.pt-BR.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Search\Index.resx">
+    <EmbeddedResource Include="Views\Shared\Error.vi-VN.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Index.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
+      <LastGenOutput>Error.vi-VN.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Shared\Error.pt-BR.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -664,6 +804,10 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Error.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Shared\Lockout.vi-VN.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Lockout.vi-VN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Shared\Lockout.pt-BR.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Lockout.pt-BR.Designer.cs</LastGenOutput>
@@ -671,6 +815,10 @@
     <EmbeddedResource Include="Views\Shared\Lockout.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Lockout.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Shared\_Layout.vi-VN.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>_Layout.vi-VN.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Shared\_Layout.pt-BR.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -680,6 +828,10 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>_Layout.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\TicketActivity\Strings.vi-VN.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.vi-VN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\TicketActivity\Strings.de-DE.resx" />
     <EmbeddedResource Include="Views\TicketActivity\Strings.pt-BR.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -688,6 +840,10 @@
     <EmbeddedResource Include="Views\TicketActivity\Strings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TicketCenter\Index.vi-VN.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.vi-VN.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\TicketCenter\Index.de-DE.resx" />
     <EmbeddedResource Include="Views\TicketCenter\Index.pt-BR.resx">
@@ -699,17 +855,25 @@
       <LastGenOutput>Index.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Shared\Error.de-DE.resx" />
+    <EmbeddedResource Include="Views\Ticket\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Ticket\Index.de-DE.resx" />
     <EmbeddedResource Include="Views\Ticket\Index.pt-BR.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Index.pt-BR.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Ticket\Index.resx">
+    <EmbeddedResource Include="Views\Ticket\Index.vi-VN.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+      <LastGenOutput>Index.vi-VN.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Shared\Lockout.de-DE.resx" />
+    <EmbeddedResource Include="Views\Ticket\New.vi-VN.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>New.vi-VN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Ticket\New.de-DE.resx" />
     <EmbeddedResource Include="Views\Ticket\New.pt-BR.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

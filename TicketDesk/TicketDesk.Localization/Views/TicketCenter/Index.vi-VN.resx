@@ -117,25 +117,82 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AssignedTo" xml:space="preserve">
-    <value>&lt;b&gt;Người thực hiện:&lt;/b&gt; {0}</value>
+  <data name="Assigned" xml:space="preserve">
+    <value>Người thực hiện:</value>
   </data>
-  <data name="Legend" xml:space="preserve">
-    <value>Tìm kiếm</value>
+  <data name="CancelOption" xml:space="preserve">
+    <value>Cancel</value>
   </data>
-  <data name="OwnedBy" xml:space="preserve">
-    <value>&lt;b&gt;Người yêu cầu:&lt;/b&gt; {0}</value>
+  <data name="CloseOption" xml:space="preserve">
+    <value>Close</value>
   </data>
-  <data name="Priority" xml:space="preserve">
-    <value>{0} Priority</value>
+  <data name="Owner" xml:space="preserve">
+    <value>Người yêu cầu:</value>
+  </data>
+  <data name="Reser_Alert" xml:space="preserve">
+    <value>All lists will be reset, including custom sort and filter settings. This cannot be undone!</value>
+  </data>
+  <data name="ResetAllSettings" xml:space="preserve">
+    <value>Reset all settings for all lists</value>
+  </data>
+  <data name="ResetLists" xml:space="preserve">
+    <value>Khôi phục bộ lọc</value>
+  </data>
+  <data name="Reset_Confirmation" xml:space="preserve">
+    <value>Are you sure you want to reset?</value>
+  </data>
+  <data name="SaveOption" xml:space="preserve">
+    <value>Reset Lists</value>
+  </data>
+  <data name="Show" xml:space="preserve">
+    <value>Show:</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Trạng thái:</value>
+  </data>
+  <data name="TicketList_Assigned" xml:space="preserve">
+    <value>Người thực hiện:</value>
+  </data>
+  <data name="TicketList_Category" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="TicketList_Created" xml:space="preserve">
+    <value>Ngày tạo</value>
+  </data>
+  <data name="TicketList_Due" xml:space="preserve">
+    <value>Ngày thực hiện</value>
+  </data>
+  <data name="TicketList_ID" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="TicketList_Owner" xml:space="preserve">
+    <value>Người yêu cầu</value>
+  </data>
+  <data name="TicketList_Priority" xml:space="preserve">
+    <value>Priority</value>
+  </data>
+  <data name="TicketList_Status" xml:space="preserve">
+    <value>Trạng thái</value>
+  </data>
+  <data name="TicketList_Target" xml:space="preserve">
+    <value>Ngày yêu cầu</value>
+  </data>
+  <data name="TicketList_Title" xml:space="preserve">
+    <value>Tên yêu cầu</value>
+  </data>
+  <data name="TicketList_Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="TicketList_Updated" xml:space="preserve">
+    <value>Ngày cập nhật</value>
   </data>
   <data name="Title" xml:space="preserve">
-    <value>Tìm kiếm khiếu nại</value>
+    <value>Ticket Center</value>
   </data>
-  <data name="Unassigned" xml:space="preserve">
-    <value>Chưa xác định</value>
+  <data name="ToggleNav" xml:space="preserve">
+    <value>Toggle navigation</value>
   </data>
-  <data name="UpdatedBy" xml:space="preserve">
-    <value>&lt;b&gt;Người cập nhật&lt;/b&gt; {0} &lt;b&gt;at&lt;/b&gt; {1} {2}</value>
+  <data name="TotalItemCount" xml:space="preserve">
+    <value>of {0}</value>
   </data>
 </root>

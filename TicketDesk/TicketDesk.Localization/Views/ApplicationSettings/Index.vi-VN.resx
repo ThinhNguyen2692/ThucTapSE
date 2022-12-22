@@ -117,25 +117,44 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AssignedTo" xml:space="preserve">
-    <value>&lt;b&gt;Người thực hiện:&lt;/b&gt; {0}</value>
+  <data name="Global_Header" xml:space="preserve">
+    <value>Global permissions</value>
+  </data>
+  <data name="Global_Priority" xml:space="preserve">
+    <value>Priority</value>
+  </data>
+  <data name="Global_Tags" xml:space="preserve">
+    <value>Tags</value>
   </data>
   <data name="Legend" xml:space="preserve">
-    <value>Tìm kiếm</value>
+    <value>Application settings</value>
   </data>
-  <data name="OwnedBy" xml:space="preserve">
-    <value>&lt;b&gt;Người yêu cầu:&lt;/b&gt; {0}</value>
+  <data name="List_Header" xml:space="preserve">
+    <value>List settings</value>
   </data>
-  <data name="Priority" xml:space="preserve">
-    <value>{0} Priority</value>
+  <data name="SaveOption" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Security_Header" xml:space="preserve">
+    <value>Security settings</value>
+  </data>
+  <data name="Settings_Editor" xml:space="preserve">
+    <value>Text Editor</value>
+  </data>
+  <data name="Settings_Editor_Help" xml:space="preserve">
+    <value>&lt;p&gt;Ticketdesk includes two choices for rich text editing.&lt;/p&gt;
+&lt;p&gt;Ticketdesk will sanitize HTML content from either editor to help prevent script injection attacks. The Markdown editor is recommended, but for less technical users an HTML based editor may be more intuative.&lt;/p&gt;</value>
+  </data>
+  <data name="Settings_Editor_HTML" xml:space="preserve">
+    <value>Summernote (HTML Editor)</value>
+  </data>
+  <data name="Settings_Editor_Markdown" xml:space="preserve">
+    <value>Pagedown (Markdown Editor)</value>
+  </data>
+  <data name="Settings_Header" xml:space="preserve">
+    <value>General settings</value>
   </data>
   <data name="Title" xml:space="preserve">
-    <value>Tìm kiếm khiếu nại</value>
-  </data>
-  <data name="Unassigned" xml:space="preserve">
-    <value>Chưa xác định</value>
-  </data>
-  <data name="UpdatedBy" xml:space="preserve">
-    <value>&lt;b&gt;Người cập nhật&lt;/b&gt; {0} &lt;b&gt;at&lt;/b&gt; {1} {2}</value>
+    <value>Application Settings</value>
   </data>
 </root>

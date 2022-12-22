@@ -23,11 +23,12 @@ namespace TicketDesk.Web.Client.Controllers
           private TdDomainContext Context { get; set; }
         private TdIdentityContext _idIdentityContext { get; set; }
 
-        private string _RoleName = "TdInternalUsers";
+        private string _RoleName ;
         public ProjectSettingsController(TdDomainContext context, TdIdentityContext _idIdentityContext)
         {
             Context = context;
             this._idIdentityContext = _idIdentityContext;
+            _RoleName = "TdInternalUsers";
         }
 
         [Route("projects")]
@@ -43,7 +44,7 @@ namespace TicketDesk.Web.Client.Controllers
         {
             ProjectNew viewModel = new ProjectNew();
 
-           viewModel.UserProjectViewModles = await GetUserByRole("05a83c59-20cd-409b-b424-ea5f5f15a835");
+           viewModel.UserProjectViewModles = await GetUserByRole();
             return View(viewModel);
         }
 
@@ -69,7 +70,7 @@ namespace TicketDesk.Web.Client.Controllers
             }
             ModelState.AddModelError("", Strings.UnableToCreateProject);
             ProjectNew viewModel = new ProjectNew();
-            viewModel.UserProjectViewModles = await GetUserByRole(GetIdRoles(_RoleName));
+            viewModel.UserProjectViewModles = await GetUserByRole();
             return View(projectViewModel);
         }
 
@@ -141,11 +142,11 @@ namespace TicketDesk.Web.Client.Controllers
         
         }
 
-        private async Task<List<UserProjectViewModle>> GetUserByRole(string roleId)
+        private async Task<List<UserProjectViewModle>> GetUserByRole()
         {
-
-           
-            var users = _idIdentityContext.Users.Where(u => u.LockoutEndDateUtc == null && u.Roles.Where(r => r.RoleId == roleId).ToList().Count > 0)
+            var admin = GetIdRoles("TdAdministrators");
+            var HelpDesk = GetIdRoles("TdHelpDeskUsers");
+            var users = _idIdentityContext.Users.Where(u => u.LockoutEndDateUtc == null && u.Roles.Where(r => r.RoleId == admin || r.RoleId == HelpDesk).ToList().Count > 0)
              .Select(u => new UserProjectViewModle { UserId = u.Id, UserDisplayName = u.DisplayName})
                 .ToListAsync();
             
@@ -156,7 +157,6 @@ namespace TicketDesk.Web.Client.Controllers
 
         public string GetIdRoles(string roleName)
         {
-
             var role = _idIdentityContext.Roles.Where(r => r.Name == roleName).FirstOrDefault().Id;
             return role;
         }

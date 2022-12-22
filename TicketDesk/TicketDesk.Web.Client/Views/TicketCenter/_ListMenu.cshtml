@@ -23,18 +23,11 @@
     <ul class="nav nav-tabs pull-right" role="tablist">
         @foreach (var list in Model)
         {
-            if (User.IsInRole("TdInternalUsers"))
-            {
-                if(list.ListName != "assignedToMe" && list.ListName != "historytickets") { continue; }
-            }
+            if (list.ListName == "unassigned") { continue; }
             var className = ((currentListSettings.ListName == list.ListName)) ? "active" : string.Empty;
             <li class="@className small">
                 @Html.ActionLink(list.ListDisplayName, "Index", new { ListName = list.ListName })
             </li>
-
-
-
-
         }
         <li data-toggle="tooltip"
             data-placement="bottom"

@@ -26,7 +26,7 @@ namespace TicketDesk.Web.Client.Models
         public string ProjectDescription { get; set; }
 
 
-        [Display(Name = "Thời gian xử lý")]
+        [Display(Name = "Thời gian xử lý (ngày)")]
         public int? ReasonableTime { get; set; }
 
     }
@@ -45,6 +45,7 @@ namespace TicketDesk.Web.Client.Models
         public List<UserProjectViewModle> UserProjectViewModles { get; set; }
 
         [Required]
+        [Display(Name = "Người phụ trách xử lý")]
         public List<string> UserIds { get; set; } 
     }
 

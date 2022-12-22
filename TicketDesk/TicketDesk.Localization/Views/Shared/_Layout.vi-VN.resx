@@ -117,25 +117,61 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AssignedTo" xml:space="preserve">
-    <value>&lt;b&gt;Người thực hiện:&lt;/b&gt; {0}</value>
+  <data name="About" xml:space="preserve">
+    <value>About</value>
   </data>
-  <data name="Legend" xml:space="preserve">
+  <data name="Account" xml:space="preserve">
+    <value>Tài khoản</value>
+  </data>
+  <data name="ApplicationSettings" xml:space="preserve">
+    <value>Cài đặt ứng dụng</value>
+  </data>
+  <data name="DemoDataManagement" xml:space="preserve">
+    <value>Demo Data Management</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Ngôn ngữ</value>
+  </data>
+  <data name="LogOff" xml:space="preserve">
+    <value>Đăng xuất</value>
+  </data>
+  <data name="ManageProjects" xml:space="preserve">
+    <value>Quản lý khiếu nại</value>
+  </data>
+  <data name="ManageUsers" xml:space="preserve">
+    <value>Quản lý nhân viên</value>
+  </data>
+  <data name="MyAccount" xml:space="preserve">
+    <value>Tài khoản của tôi</value>
+  </data>
+  <data name="NewTicket" xml:space="preserve">
+    <value>Gửi khiếu nại</value>
+  </data>
+  <data name="PushNotificationSettings" xml:space="preserve">
+    <value>Cài đặt thông báo đẩy</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Đăng ký</value>
+  </data>
+  <data name="Search" xml:space="preserve">
     <value>Tìm kiếm</value>
   </data>
-  <data name="OwnedBy" xml:space="preserve">
-    <value>&lt;b&gt;Người yêu cầu:&lt;/b&gt; {0}</value>
+  <data name="SearchManagement" xml:space="preserve">
+    <value>Quản lý tìm kiếm</value>
   </data>
-  <data name="Priority" xml:space="preserve">
-    <value>{0} Priority</value>
+  <data name="Settings" xml:space="preserve">
+    <value>Cài đặt</value>
   </data>
-  <data name="Title" xml:space="preserve">
-    <value>Tìm kiếm khiếu nại</value>
+  <data name="SignIn" xml:space="preserve">
+    <value>Đăng nhập</value>
   </data>
-  <data name="Unassigned" xml:space="preserve">
-    <value>Chưa xác định</value>
+  <data name="TicketCenter" xml:space="preserve">
+    <value>Danh sách</value>
   </data>
-  <data name="UpdatedBy" xml:space="preserve">
-    <value>&lt;b&gt;Người cập nhật&lt;/b&gt; {0} &lt;b&gt;at&lt;/b&gt; {1} {2}</value>
+  <data name="Toggle" xml:space="preserve">
+    <value>Chuyển đổi điều hướng thành</value>
   </data>
 </root>

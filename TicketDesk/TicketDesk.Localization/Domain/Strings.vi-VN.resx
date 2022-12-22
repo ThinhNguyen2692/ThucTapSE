@@ -175,7 +175,7 @@
     <value>Edit Attachments</value>
   </data>
   <data name="TicketActivity_ForceClose" xml:space="preserve">
-    <value>Force Close</value>
+    <value>Đóng khiếu nại</value>
   </data>
   <data name="TicketActivity_GiveUp" xml:space="preserve">
     <value>Give Up</value>
@@ -187,16 +187,16 @@
     <value>Provide Info</value>
   </data>
   <data name="TicketActivity_ReAssign" xml:space="preserve">
-    <value>Re-assign</value>
+    <value>chuyển tiếp</value>
   </data>
   <data name="TicketActivity_ReOpen" xml:space="preserve">
-    <value>Re-open</value>
+    <value>Phản hồi</value>
   </data>
   <data name="TicketActivity_RequestMoreInfo" xml:space="preserve">
-    <value>Request More Info</value>
+    <value>Tạm hoãn</value>
   </data>
   <data name="TicketActivity_Resolve" xml:space="preserve">
-    <value>Resolve</value>
+    <value>Phản hồi</value>
   </data>
   <data name="TicketActivity_TakeOver" xml:space="preserve">
     <value>Take Over</value>
@@ -260,10 +260,10 @@
     <value>has taken over the ticket</value>
   </data>
   <data name="DefaultListNameHistoryTickets" xml:space="preserve">
-    <value>Ticket History</value>
+    <value>Lịch sử khiếu nại</value>
   </data>
   <data name="DefaultListNameMyTickets" xml:space="preserve">
-    <value>My Tickets</value>
+    <value>Khiếu nại</value>
   </data>
   <data name="DefaultListNameOpenTickets" xml:space="preserve">
     <value>Open Tickets</value>
@@ -299,10 +299,10 @@
     <value>Người tạo</value>
   </data>
   <data name="TicketCreatedDate" xml:space="preserve">
-    <value>Created Date</value>
+    <value>Ngày tạo</value>
   </data>
   <data name="TicketCreatedDateShort" xml:space="preserve">
-    <value>Created Date</value>
+    <value>Ngày tạo</value>
   </data>
   <data name="TicketCurrentStatusDate" xml:space="preserve">
     <value>Status Date</value>
@@ -329,16 +329,16 @@
     <value>Is Html</value>
   </data>
   <data name="TicketLastUpdateBy" xml:space="preserve">
-    <value>Updated By</value>
+    <value>Người cập nhật</value>
   </data>
   <data name="TicketLastUpdateByShort" xml:space="preserve">
-    <value>Updated By</value>
+    <value>Người cập nhật</value>
   </data>
   <data name="TicketLastUpdateDate" xml:space="preserve">
-    <value>Updated Date</value>
+    <value>Ngày cập nhật</value>
   </data>
   <data name="TicketLastUpdateDateShort" xml:space="preserve">
-    <value>Updated Date</value>
+    <value>Ngày cập nhật</value>
   </data>
   <data name="TicketOwner" xml:space="preserve">
     <value>Owner</value>
@@ -353,16 +353,16 @@
     <value>Priority</value>
   </data>
   <data name="TicketStatusActive" xml:space="preserve">
-    <value>Active</value>
+    <value>Yêu cầu</value>
   </data>
   <data name="TicketStatusClosed" xml:space="preserve">
-    <value>Closed</value>
+    <value>Đã giải quyết</value>
   </data>
   <data name="TicketStatusMoreInfo" xml:space="preserve">
-    <value>More Info</value>
+    <value>Tạm hoãn</value>
   </data>
   <data name="TicketStatusResolved" xml:space="preserve">
-    <value>Resolved</value>
+    <value>Chờ phản hồi</value>
   </data>
   <data name="TicketTagList" xml:space="preserve">
     <value>Tags</value>
@@ -377,10 +377,10 @@
     <value>Id</value>
   </data>
   <data name="TicketTicketStatus" xml:space="preserve">
-    <value>Status</value>
+    <value>Trạng thái</value>
   </data>
   <data name="TicketTicketStatusShort" xml:space="preserve">
-    <value>Status</value>
+    <value>Trạng thái</value>
   </data>
   <data name="TicketTicketType" xml:space="preserve">
     <value>Type</value>
@@ -399,7 +399,7 @@
     <comment>leading space</comment>
   </data>
   <data name="DefaultListNameAssignedToMe" xml:space="preserve">
-    <value>My Assigned</value>
+    <value>Chờ xử lý</value>
   </data>
   <data name="DefaultListNameUnassigned" xml:space="preserve">
     <value>Unassigned</value>
@@ -441,12 +441,15 @@
     <value>Resolution</value>
   </data>
   <data name="TicketTargetDate" xml:space="preserve">
-    <value>Target Date</value>
+    <value>Ngày thực hiện</value>
   </data>
   <data name="TicketTargetDateShort" xml:space="preserve">
     <value>Target</value>
   </data>
   <data name="DefaultLogonDomain" xml:space="preserve">
     <value>Default Logon Domain</value>
+  </data>
+  <data name="TicketStatusRoleUser" xml:space="preserve">
+    <value>Đã phản hồi</value>
   </data>
 </root>

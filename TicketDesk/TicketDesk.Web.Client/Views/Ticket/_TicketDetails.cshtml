@@ -145,18 +145,18 @@
                             </div>
                         </div>
 
-                        <div class="row">
+                        @*<div class="row">
                             @Html.LabelFor(m => m.CurrentStatusSetBy, new {@class = "col-sm-5 col-lg-4 text-right"})
                             <div class="col-sm-7 col-lg-8">
                                 @Model.GetCurrentStatusSetByInfo().DisplayName
                             </div>
-                        </div>
-                        <div class="row">
+                        </div>*@
+                        @*<div class="row">
                             @Html.LabelFor(m => m.CurrentStatusDate, new {@class = "col-sm-5 col-lg-4 text-right"})
                             <div class="col-sm-7 col-lg-8">
                                 @Model.CurrentStatusDate.DateTime.ToShortDateString() @Model.CurrentStatusDate.DateTime.ToShortTimeString()
                             </div>
-                        </div>
+                        </div>*@
                         <div class="row">
                             @Html.LabelFor(m => m.CreatedBy, new {@class = "col-sm-5 col-lg-4 text-right"})
                             <div class="col-sm-7 col-lg-8">
@@ -169,19 +169,19 @@
                                 @Model.CreatedDate.DateTime.ToShortDateString() @Model.CreatedDate.DateTime.ToShortTimeString()
                             </div>
                         </div>
-                        <div class="row">
+                        @*<div class="row">
                             @Html.LabelFor(m => m.EstimatedDuration, new { @class = "col-sm-5 col-lg-4 text-right" })
                             <div class="col-sm-7 col-lg-8">
                                 @Model.EstimatedDuration
                             </div>
-                        </div>
-                        <div class="row">
+                        </div>*@
+                        @*<div class="row">
                             @Html.LabelFor(m => m.ActualDuration, new { @class = "col-sm-5 col-lg-4 text-right" })
                             <div class="col-sm-7 col-lg-8">
                                 @Model.ActualDuration
                             </div>
-                        </div>
-                        <div class="row">
+                        </div>*@
+                        @*<div class="row">
                             <label class="col-sm-5 col-lg-4 text-right">@Index.Subscribers</label>
                             <div class="col-sm-7 col-lg-8">
 
@@ -190,7 +190,7 @@
                                 <div>@sub.GetSubscriberDisplayInfo().DisplayName</div>
                                 }
                             </div>
-                        </div>
+                        </div>*@
                     </div>
 
                 </aside>

@@ -117,25 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AssignedTo" xml:space="preserve">
-    <value>&lt;b&gt;Người thực hiện:&lt;/b&gt; {0}</value>
+  <data name="Description" xml:space="preserve">
+    <value>Tài khoản này đã bị khóa, vui lòng thử lại sau.</value>
   </data>
-  <data name="Legend" xml:space="preserve">
-    <value>Tìm kiếm</value>
-  </data>
-  <data name="OwnedBy" xml:space="preserve">
-    <value>&lt;b&gt;Người yêu cầu:&lt;/b&gt; {0}</value>
-  </data>
-  <data name="Priority" xml:space="preserve">
-    <value>{0} Priority</value>
+  <data name="Header" xml:space="preserve">
+    <value>Bị khóa.</value>
   </data>
   <data name="Title" xml:space="preserve">
-    <value>Tìm kiếm khiếu nại</value>
-  </data>
-  <data name="Unassigned" xml:space="preserve">
-    <value>Chưa xác định</value>
-  </data>
-  <data name="UpdatedBy" xml:space="preserve">
-    <value>&lt;b&gt;Người cập nhật&lt;/b&gt; {0} &lt;b&gt;at&lt;/b&gt; {1} {2}</value>
+    <value>Bị khóa.</value>
   </data>
 </root>
