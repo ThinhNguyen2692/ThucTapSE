@@ -123,8 +123,6 @@
                         @Html.HiddenFor(model => model.Ticket.IsHtml)
                         <input type="hidden" name="tempId" value="@ViewBag.TempId" />
 
-                        @if (ViewBag.IsMultiProject ?? false)
-                        {
                             <div class="form-group">
                                 @Html.LabelFor(model => model.Ticket.ProjectId, new { @class = "col-md-2 col-sm-1 control-label" })
                                 <div class="col-md-8 col-sm-11">
@@ -134,11 +132,7 @@
 
                                 </div>
                             </div>
-                        }
-                        else
-                        {
-                            @Html.HiddenFor(model => model.Ticket.ProjectId)
-                        }
+                      
                         <div class="form-group">
                             @Html.LabelFor(model => model.Ticket.Title, new { @class = "col-md-2 col-sm-1 control-label focus" })
                             <div class="col-md-8 col-sm-11">

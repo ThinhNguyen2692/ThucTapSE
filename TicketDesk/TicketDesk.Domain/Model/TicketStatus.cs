@@ -24,6 +24,10 @@ namespace TicketDesk.Domain.Model
         MoreInfo,
         [Display(Name = "TicketStatusResolved", ResourceType = typeof(Strings))]
         Resolved,
+        [Display(Name = "TicketStatusRoleUser", ResourceType = typeof(Strings))]
+        ResolvedRoleUser,
+        [Display(Name = "TicketStatusOutOfDate", ResourceType = typeof(Strings))]
+        OutOfDate,
         [Display(Name = "TicketStatusClosed", ResourceType = typeof(Strings))]
         Closed
     }

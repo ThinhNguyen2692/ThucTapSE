@@ -22,6 +22,11 @@
     var ajaxSortOptions = new AjaxOptions { UpdateTargetId = "ticketList", OnBegin = "ticketCenter.sorts.beginChangeSort", OnSuccess = "ticketCenter.completeChangeList", OnFailure = "ticketCenter.completeChangeList" };
     var ajaxPagerOptions = new AjaxOptions() { HttpMethod = "GET", UpdateTargetId = "ticketList", OnBegin = "ticketCenter.paging.beginChangePage", OnSuccess = "ticketCenter.completeChangeList", OnFailure = "ticketCenter.completeChangeList" };
 }
+@section cssDetail{
+    <style>
+       
+    </style>
+}
 <div id="ticketList" class="panel panel-default">
     <div class="panel-heading row-no-padding">
         @Html.Partial("_FilterBar")
@@ -46,13 +51,13 @@
                         <th>
                             @Ajax.SortableColumnHeader(Html, Model.CurrentListSetting, Model.CurrentPage, "SortList", Model.CurrentListSetting.ListName, "AssignedTo", Index.TicketList_Assigned, ajaxSortOptions)
                         </th>
-                   
+
                         <th>
                             @Ajax.SortableColumnHeader(Html, Model.CurrentListSetting, Model.CurrentPage, "SortList", Model.CurrentListSetting.ListName, "TargetDate", Index.TicketList_Target, ajaxSortOptions)
                         </th>
                         <th style="color: #23527c;">
                             @Ajax.SortableColumnHeader(Html, Model.CurrentListSetting, Model.CurrentPage, "SortList", Model.CurrentListSetting.ListName, "DueDate", Index.TicketList_Due, ajaxSortOptions)
-                           
+
                         </th>
                         <th class="hidden-sm hidden-xs">
                             @Ajax.SortableColumnHeader(Html, Model.CurrentListSetting, Model.CurrentPage, "SortList", Model.CurrentListSetting.ListName, "CreatedDate", Index.TicketList_Created, ajaxSortOptions)
@@ -66,9 +71,15 @@
 
                     @foreach (var item in tickets)
                     {
+                        
+                            // Tính thời gian ngày thực hiện
+                            var date = item.TargetDate.DateTime - DateTime.Now;
+                        //Số ngày  còn lại
+                            var day = date.Days;
+                       
                         <tr class="clickable @(item.IsDue ? "due" : (item.IsOverDue ? "overdue" : string.Empty))">
                             <td colspan="2" style="white-space: normal;">
-                                <a href="@Url.Action("Index", "Ticket", new { area = "", id = item.TicketId })", style="margin-right: 1ex;">
+                                <a href="@Url.Action("Index", "Ticket", new { area = "", id = item.TicketId })" , style="margin-right: 1ex;">
                                     #@item.TicketId
                                 </a>
                                 @Html.DisplayFor(modelItem => item.Title)
@@ -83,7 +94,20 @@
                                 }
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.TicketStatus)
+                                @* Nhân viên: đã phản hồi: *@
+                                @* Admin: Chờ phản hồi *@
+                                @if ( User.IsInRole("TdInternalUsers") && item.TicketStatus == TicketStatus.Resolved)
+                                {
+                                    item.TicketStatus = TicketStatus.ResolvedRoleUser;
+                                }
+                                 @if (day < 0 && (item.TicketStatus != TicketStatus.Closed && item.TicketStatus != TicketStatus.MoreInfo))
+                                 {
+                                     item.TicketStatus = TicketStatus.OutOfDate;
+                                 }
+                                <div class="@item.TicketStatus"> @Html.DisplayFor(modelItem => item.TicketStatus)</div>
+
+                             
+
                             </td>
                             <td class="hidden-xs">
                                 @Html.DisplayFor(modelItem => item.GetOwnerInfo().DisplayName)
@@ -91,15 +115,12 @@
                             <td>
                                 @Html.DisplayFor(modelItem => item.GetAssignedToInfo().DisplayName)
                             </td>
-                          
+
                             <td class="hidden-sm hidden-xs">
                                 @Html.DisplayFor(modelItem => item.TargetDateAsString)
                             </td>
                             <td class="hidden-sm hidden-xs">
-                                @{
-                                    var date = item.TargetDate.DateTime - DateTime.Now;
-                                    var day = date.Days + 1;
-                                }
+
                                 @Html.Label(day.ToString())
                             </td>
                             <td class="hidden-sm hidden-xs">

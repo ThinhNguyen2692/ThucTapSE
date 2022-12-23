@@ -71,7 +71,7 @@ namespace TicketDesk.Web.Client.Controllers
             ModelState.AddModelError("", Strings.UnableToCreateProject);
             ProjectNew viewModel = new ProjectNew();
             viewModel.UserProjectViewModles = await GetUserByRole();
-            return View(projectViewModel);
+            return View(viewModel);
         }
 
         [Route("project/delete/{projectId:int}")]

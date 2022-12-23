@@ -300,7 +300,7 @@ namespace TicketDesk.Domain
             {
                 if (CheckSecurity(ticket, activity))
                 {
-                    ticket.AssignedTo = assignToMe ? SecurityProvider.CurrentUserId : null;
+                  //  ticket.AssignedTo = assignToMe ? SecurityProvider.CurrentUserId : null;
                     ticket.TicketStatus = TicketStatus.Active;
                     ticket.TicketEvents.AddActivityEvent(SecurityProvider.CurrentUserId, activity, comment);
                 }

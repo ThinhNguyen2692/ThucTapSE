@@ -59,124 +59,141 @@ Content-Type: text/html; charset=utf-8
     </style>
 </head>
 <body>
-    <div style="border: 1px solid #dcdcdc;">
-        <table style="background-color: #B3CBDF;width: 100%;">
-            <tr>
-                <td style="width: 55px; font-weight: bold; border-right: 1px solid #dcdcdc; text-align: center;">
-                    <a href="@((Model.SiteRootUrl??string.Empty).TrimEnd('/'))@Url.Action("Index", "Ticket", new {Id = Model.Ticket.TicketId })">
-                        @Model.Ticket.TicketStatus.GetDisplayName()
-                    </a>
-                </td>
-                <td style="width: 40px; font-weight: bold; border-right: 1px solid #dcdcdc; text-align: center;">
-                    <a href="@((Model.SiteRootUrl??string.Empty).TrimEnd('/'))@Url.Action("Index", "Ticket", new {Id = Model.Ticket.TicketId })">
-                        #@Model.Ticket.TicketId
-                    </a>
 
-                </td>
-           
-                <td style="font-weight: bold; text-align: left;">
-                    <a href="@((Model.SiteRootUrl??string.Empty).TrimEnd('/'))@Url.Action("Index", "Ticket", new {Id = Model.Ticket.TicketId })">
-                        @Model.Ticket.Title
-                    </a>
-                </td>
+    Dear @Html.Raw((string.IsNullOrEmpty(Model.Ticket.AssignedTo))
+                 ?
+                 string.Format("Dear", "<span class=\"tag\">" + Strings.Unassigned + "</span>")
+                 :
+                 string.Format(Model.Ticket.GetAssignedToInfo().DisplayName)
+             )
+    <div><br></div>
+    <div>Bạn có khuyến nại cần được xử lý</div>
+    <div>Vui lòng truy cập vào <a href="@((Model.SiteRootUrl??string.Empty).TrimEnd('/'))@Url.Action("Index", "Ticket", new {Id = Model.Ticket.TicketId })">LinkKhieuNai</a></div>
+    <div><br></div>
+    <div>Đây là Email tự động từ hệ thống HRM!</div>
+    <div>Vui lòng không phản hồi</div>
+    <div>Thank you!</div>
 
-            </tr>
-        </table>
-        <table style="border-bottom: 1px solid #e7e7e7; width: 100%; background-color: #F7F7F7;">
-            @if (!string.IsNullOrEmpty(Model.Ticket.TagList))
-            {
+
+
+    @*<div style="border: 1px solid #dcdcdc;">
+            <table style="background-color: #B3CBDF;width: 100%;">
                 <tr>
-                    <td style="text-align: right;">
-
-                        @foreach (var tag in Model.Ticket.TagList.Split(','))
-                        {
-                            <span class="tag">@tag</span>
-                        }
+                    <td style="width: 55px; font-weight: bold; border-right: 1px solid #dcdcdc; text-align: center;">
+                        <a href="@((Model.SiteRootUrl??string.Empty).TrimEnd('/'))@Url.Action("Index", "Ticket", new {Id = Model.Ticket.TicketId })">
+                            @Model.Ticket.TicketStatus.GetDisplayName()
+                        </a>
+                    </td>
+                    <td style="width: 40px; font-weight: bold; border-right: 1px solid #dcdcdc; text-align: center;">
+                        <a href="@((Model.SiteRootUrl??string.Empty).TrimEnd('/'))@Url.Action("Index", "Ticket", new {Id = Model.Ticket.TicketId })">
+                            #@Model.Ticket.TicketId
+                        </a>
 
                     </td>
+
+                    <td style="font-weight: bold; text-align: left;">
+                        <a href="@((Model.SiteRootUrl??string.Empty).TrimEnd('/'))@Url.Action("Index", "Ticket", new {Id = Model.Ticket.TicketId })">
+                            @Model.Ticket.Title
+                        </a>
+                    </td>
+
                 </tr>
-            }
-            <tr>
-                <td>
-                    @(string.IsNullOrEmpty(Model.Ticket.Priority) ? string.Empty : string.Format(Strings.Priority, Model.Ticket.Priority)) @Model.Ticket.Category @Model.Ticket.TicketType
-                </td>
-            </tr>
-            @if (Model.IsMultiProject)
-            {
+            </table>
+            <table style="border-bottom: 1px solid #e7e7e7; width: 100%; background-color: #F7F7F7;">
+                @if (!string.IsNullOrEmpty(Model.Ticket.TagList))
+                {
+                    <tr>
+                        <td style="text-align: right;">
+
+                            @foreach (var tag in Model.Ticket.TagList.Split(','))
+                            {
+                                <span class="tag">@tag</span>
+                            }
+
+                        </td>
+                    </tr>
+                }
                 <tr>
                     <td>
-                        @string.Format(Strings.Project, Model.Ticket.Project.ProjectName)
+                        @(string.IsNullOrEmpty(Model.Ticket.Priority) ? string.Empty : string.Format(Strings.Priority, Model.Ticket.Priority)) @Model.Ticket.Category @Model.Ticket.TicketType
                     </td>
                 </tr>
-            }
-            <tr>
-                <td>
-                    @Html.Raw((string.IsNullOrEmpty(Model.Ticket.AssignedTo))
-                        ?
-                        string.Format(Strings.AssignedTo, "<span class=\"tag\">" + Strings.Unassigned + "</span>")
-                        :
-                        string.Format(Strings.AssignedTo, Model.Ticket.GetAssignedToInfo().DisplayName)
-                    )
-                </td>
-            <tr>
-                <td>
-                    @string.Format(Strings.Owner, Model.Ticket.GetOwnerInfo().DisplayName)
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    @string.Format(Strings.UpdatedBy, Model.Ticket.GetLastUpdatedByInfo().DisplayName, Model.Ticket.LastUpdateDate.DateTime.ToShortDateString(), Model.Ticket.LastUpdateDate.DateTime.ToShortTimeString())
-                </td>
-            </tr>
-        </table>
+                @if (Model.IsMultiProject)
+                {
+                    <tr>
+                        <td>
+                            @string.Format(Strings.Project, Model.Ticket.Project.ProjectName)
+                        </td>
+                    </tr>
+                }
+                <tr>
+                    <td>
+                        @Html.Raw((string.IsNullOrEmpty(Model.Ticket.AssignedTo))
+                            ?
+                            string.Format(Strings.AssignedTo, "<span class=\"tag\">" + Strings.Unassigned + "</span>")
+                            :
+                            string.Format(Strings.AssignedTo, Model.Ticket.GetAssignedToInfo().DisplayName)
+                        )
+                    </td>
+                <tr>
+                    <td>
+                        @string.Format(Strings.Owner, Model.Ticket.GetOwnerInfo().DisplayName)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @string.Format(Strings.UpdatedBy, Model.Ticket.GetLastUpdatedByInfo().DisplayName, Model.Ticket.LastUpdateDate.DateTime.ToShortDateString(), Model.Ticket.LastUpdateDate.DateTime.ToShortTimeString())
+                    </td>
+                </tr>
+            </table>
 
-        <table style="width: 100%;">
-            <tr>
-                <td style="">
-                    <div style="overflow-y:scroll; max-height: 250px; min-height: 100px;">
-                        @Model.Ticket.HtmlDetails()
-                    </div>
-                </td>
-            </tr>
-        </table>
-        <table style="background-color: #B3CBDF; width: 100%;">
-            <tr>
-                <td style="font-weight: bold;">
-                    @Strings.Activity
-                </td>
-            </tr>
-        </table>
-        <div style="padding: 10px;">
-            @foreach (var evt in Model.Ticket.TicketEvents.OrderByDescending(c => c.EventDate))
-            {
-                <div style="border: 1px solid #dfdfdf; margin-bottom: 10px;">
-                    <table style="background-color: #F7F7F7;width: 100%;">
-                        <tr>
-                            <td><strong>@evt.GetEventByInfo().DisplayName</strong> @evt.EventDescription</td>
-                        </tr>
-                        <tr>
-                            <td style="text-indent: 1em; font-size: smaller">
-                                @evt.EventDate.Date.ToLongDateString()
-                                @evt.EventDate.Date.ToShortTimeString()
-                            </td>
-                        </tr>
-                    </table>
+            <table style="width: 100%;">
+                <tr>
+                    <td style="">
+                        <div style="overflow-y:scroll; max-height: 250px; min-height: 100px;">
+                            @Model.Ticket.HtmlDetails()
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <table style="background-color: #B3CBDF; width: 100%;">
+                <tr>
+                    <td style="font-weight: bold;">
+                        @Strings.Activity
+                    </td>
+                </tr>
+            </table>
+            <div style="padding: 10px;">
+                @foreach (var evt in Model.Ticket.TicketEvents.OrderByDescending(c => c.EventDate))
+                {
+                    <div style="border: 1px solid #dfdfdf; margin-bottom: 10px;">
+                        <table style="background-color: #F7F7F7;width: 100%;">
+                            <tr>
+                                <td><strong>@evt.GetEventByInfo().DisplayName</strong> @evt.EventDescription</td>
+                            </tr>
+                            <tr>
+                                <td style="text-indent: 1em; font-size: smaller">
+                                    @evt.EventDate.Date.ToLongDateString()
+                                    @evt.EventDate.Date.ToShortTimeString()
+                                </td>
+                            </tr>
+                        </table>
 
-                    @{
-                        var cmt = evt.HtmlComment();
-                        if (!string.IsNullOrEmpty(cmt.ToString()))
-                        {
-                            <table style="width: 100%;">
-                                <tr>
-                                    <td style="font-family: monospace; font-size: 9pt;">@cmt</td>
-                                </tr>
-                            </table>
+                        @{
+                            var cmt = evt.HtmlComment();
+                            if (!string.IsNullOrEmpty(cmt.ToString()))
+                            {
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td style="font-family: monospace; font-size: 9pt;">@cmt</td>
+                                    </tr>
+                                </table>
+                            }
                         }
-                    }
-                </div>
-            }
-        </div>
+                    </div>
+                }
+            </div>
 
-    </div>
+        </div>*@
 </body>
 </html>

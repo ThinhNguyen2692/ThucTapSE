@@ -136,10 +136,10 @@
     <value>Default New User Roles</value>
   </data>
   <data name="Project_Description" xml:space="preserve">
-    <value>Description</value>
+    <value>Mô tả loại phản hồi</value>
   </data>
   <data name="Project_Name" xml:space="preserve">
-    <value>Project Name</value>
+    <value>Loại phản hồi</value>
   </data>
   <data name="SelectList_Categories" xml:space="preserve">
     <value>Categories</value>
@@ -154,10 +154,10 @@
     <value>Assign</value>
   </data>
   <data name="TicketActivity_CancelMoreInfo" xml:space="preserve">
-    <value>Cancel More Info</value>
+    <value>Hủy tạm hoãn</value>
   </data>
   <data name="TicketActivity_Close" xml:space="preserve">
-    <value>Close</value>
+    <value>Đóng khiếu nại</value>
   </data>
   <data name="TicketActivity_Comment" xml:space="preserve">
     <value>Comment</value>
@@ -175,7 +175,7 @@
     <value>Edit Attachments</value>
   </data>
   <data name="TicketActivity_ForceClose" xml:space="preserve">
-    <value>Đóng khiếu nại</value>
+    <value>Đóng khuyến nại *</value>
   </data>
   <data name="TicketActivity_GiveUp" xml:space="preserve">
     <value>Give Up</value>
@@ -209,13 +209,13 @@
     <comment>{0} = user</comment>
   </data>
   <data name="TicketActivityCancelMoreInfo" xml:space="preserve">
-    <value>has cancelled the request for more information</value>
+    <value>Khiếu nại yêu cầu được tiếp tục</value>
   </data>
   <data name="TicketActivityClose" xml:space="preserve">
     <value>closed the ticket</value>
   </data>
   <data name="TicketActivityCreate" xml:space="preserve">
-    <value>created the ticket</value>
+    <value>Gửi khiếu nại</value>
   </data>
   <data name="TicketActivityCreateOnBehalfOf" xml:space="preserve">
     <value>created the ticket on behalf of {0}</value>
@@ -225,7 +225,7 @@
     <value>modified ticket</value>
   </data>
   <data name="TicketActivityForceClose" xml:space="preserve">
-    <value>closed the ticket by force</value>
+    <value>Đóng khiếu nại</value>
   </data>
   <data name="TicketActivityGiveUp" xml:space="preserve">
     <value>has given up on the ticket</value>
@@ -245,13 +245,13 @@
     <comment>{0} = user</comment>
   </data>
   <data name="TicketActivityReOpen" xml:space="preserve">
-    <value>re-opened the ticket</value>
+    <value>Mở lại khiếu nại</value>
   </data>
   <data name="TicketActivityRequestMoreInfo" xml:space="preserve">
-    <value>has requested more information</value>
+    <value>Tạm hõa khiếu nại để chờ thêm thông tin</value>
   </data>
   <data name="TicketActivityResolve" xml:space="preserve">
-    <value>resolved the ticket</value>
+    <value>Phản hồi khiếu nại</value>
   </data>
   <data name="TicketActivitySupplyMoreInfo" xml:space="preserve">
     <value>has provided more information</value>
@@ -281,10 +281,10 @@
     <value>Customer</value>
   </data>
   <data name="TicketAssignedTo" xml:space="preserve">
-    <value>Assigned To</value>
+    <value>Người xử lý/ phản hồi</value>
   </data>
   <data name="TicketAssignedToShort" xml:space="preserve">
-    <value>Assigned</value>
+    <value>Người xử lý</value>
   </data>
   <data name="TicketCategory" xml:space="preserve">
     <value>Category</value>
@@ -341,10 +341,10 @@
     <value>Ngày cập nhật</value>
   </data>
   <data name="TicketOwner" xml:space="preserve">
-    <value>Owner</value>
+    <value>Người khiếu nại</value>
   </data>
   <data name="TicketOwnerShort" xml:space="preserve">
-    <value>Owner</value>
+    <value>Người khiếu nại</value>
   </data>
   <data name="TicketPriority" xml:space="preserve">
     <value>Priority</value>
@@ -365,10 +365,10 @@
     <value>Chờ phản hồi</value>
   </data>
   <data name="TicketTagList" xml:space="preserve">
-    <value>Tags</value>
+    <value>Nhãn</value>
   </data>
   <data name="TicketTagListShort" xml:space="preserve">
-    <value>Tags</value>
+    <value>Nhãn</value>
   </data>
   <data name="TicketTicketId" xml:space="preserve">
     <value>Ticket Id</value>
@@ -389,10 +389,10 @@
     <value>Type</value>
   </data>
   <data name="TicketTitle" xml:space="preserve">
-    <value>Title</value>
+    <value>Tiêu đề</value>
   </data>
   <data name="TicketTitleShort" xml:space="preserve">
-    <value>Title</value>
+    <value>Tiêu đề</value>
   </data>
   <data name="TicketActivityPriority" xml:space="preserve">
     <value> at a priority of {0}</value>
@@ -405,10 +405,10 @@
     <value>Unassigned</value>
   </data>
   <data name="TicketProject" xml:space="preserve">
-    <value>Project</value>
+    <value>Loại phản hồi</value>
   </data>
   <data name="TicketProjectShort" xml:space="preserve">
-    <value>Project</value>
+    <value>Loại phản hồi</value>
   </data>
   <data name="AllowInternalUsersToSetAssigned" xml:space="preserve">
     <value>Allow internal users to set the assigned to field (new ticket creation only)?</value>
@@ -423,16 +423,16 @@
     <value>Due</value>
   </data>
   <data name="TicketActualDuration" xml:space="preserve">
-    <value>Actual Duration</value>
+    <value>Thời gian mong đợi</value>
   </data>
   <data name="TicketActualDurationShort" xml:space="preserve">
-    <value>Actual</value>
+    <value>Thời gian mong đợi</value>
   </data>
   <data name="TicketEstimatedDuration" xml:space="preserve">
-    <value>Estimated Duration</value>
+    <value>Thời gian thực hiện</value>
   </data>
   <data name="TicketEstimatedDurationShort" xml:space="preserve">
-    <value>Estimated</value>
+    <value>Thời gian thực hiện</value>
   </data>
   <data name="TicketResolutionDate" xml:space="preserve">
     <value>Resolution Date</value>
@@ -441,7 +441,7 @@
     <value>Resolution</value>
   </data>
   <data name="TicketTargetDate" xml:space="preserve">
-    <value>Ngày thực hiện</value>
+    <value>Ngày còn lại</value>
   </data>
   <data name="TicketTargetDateShort" xml:space="preserve">
     <value>Target</value>
@@ -451,5 +451,8 @@
   </data>
   <data name="TicketStatusRoleUser" xml:space="preserve">
     <value>Đã phản hồi</value>
+  </data>
+  <data name="TicketStatusOutOfDate" xml:space="preserve">
+    <value>Quá hạn</value>
   </data>
 </root>

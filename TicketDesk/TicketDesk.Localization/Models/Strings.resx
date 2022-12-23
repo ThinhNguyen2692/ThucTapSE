@@ -127,22 +127,22 @@
     <value>The password and confirmation password do not match.</value>
   </data>
   <data name="ConfirmNewPassword" xml:space="preserve">
-    <value>Confirm new password</value>
+    <value>Nhập lại mật khẩu mới</value>
   </data>
   <data name="ConfirmPassword" xml:space="preserve">
-    <value>Confirm password</value>
+    <value>Nhập mật khẩu</value>
   </data>
   <data name="CurrentPassword" xml:space="preserve">
-    <value>Current password</value>
+    <value>Nhập mật khẩu hiện tại</value>
   </data>
   <data name="Disabled" xml:space="preserve">
-    <value>Disabled</value>
+    <value>Vô hiệu hóa</value>
   </data>
   <data name="Disabled_Prompt" xml:space="preserve">
-    <value>Disabled</value>
+    <value>Vô hiệu hóa</value>
   </data>
   <data name="DisplayName" xml:space="preserve">
-    <value>Display Name</value>
+    <value>Tên</value>
   </data>
   <data name="Email" xml:space="preserve">
     <value>Email</value>
@@ -163,10 +163,10 @@
     <value>The new password and confirmation password do not match.</value>
   </data>
   <data name="NewPassword" xml:space="preserve">
-    <value>New password</value>
+    <value>Nhập mật khẩu mới</value>
   </data>
   <data name="Password" xml:space="preserve">
-    <value>Password</value>
+    <value>Nhập mật khẩu</value>
   </data>
   <data name="RememberMe" xml:space="preserve">
     <value>Remember me?</value>
@@ -175,22 +175,22 @@
     <value>-- select --</value>
   </data>
   <data name="TicketStatus_Active" xml:space="preserve">
-    <value>Active</value>
+    <value>Yêu cầu</value>
   </data>
   <data name="TicketStatus_Any" xml:space="preserve">
     <value>-- any --</value>
   </data>
   <data name="TicketStatus_Closed" xml:space="preserve">
-    <value>Closed</value>
+    <value>Đóng</value>
   </data>
   <data name="TicketStatus_MoreInfo" xml:space="preserve">
-    <value>More Info</value>
+    <value>Tạm hoãn</value>
   </data>
   <data name="TicketStatus_Open" xml:space="preserve">
     <value>-- open --</value>
   </data>
   <data name="TicketStatus_Resolved" xml:space="preserve">
-    <value>Resolved</value>
+    <value>Phản hồi</value>
   </data>
   <data name="UserNameOrEmail" xml:space="preserve">
     <value>Username / Email</value>

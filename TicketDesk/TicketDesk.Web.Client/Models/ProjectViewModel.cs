@@ -15,8 +15,8 @@ namespace TicketDesk.Web.Client.Models
     {
         public ProjectViewModel() { }
 
-
-        public int ProjectId { get; set; }
+        [Required]
+        public int? ProjectId { get; set; } = null;
 
         [Required]
         [Display(Name = "Tên project")]

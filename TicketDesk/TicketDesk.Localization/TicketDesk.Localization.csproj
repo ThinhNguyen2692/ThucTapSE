@@ -51,6 +51,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\Strings.vi-VN.Designer.cs">
+      <DependentUpon>Strings.vi-VN.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Controllers\Strings.pt-BR.Designer.cs">
       <DependentUpon>Strings.pt-BR.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -479,6 +484,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Index.resx</DependentUpon>
     </Compile>
+    <Compile Include="Views\User\Lockout.vi-VN.Designer.cs">
+      <DependentUpon>Lockout.vi-VN.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Views\User\Lockout.pt-BR.Designer.cs">
       <DependentUpon>Lockout.pt-BR.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -504,6 +514,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Register.resx</DependentUpon>
     </Compile>
+    <Compile Include="Views\User\SignIn.vi-VN.Designer.cs">
+      <DependentUpon>SignIn.vi-VN.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Views\User\SignIn.pt-BR.Designer.cs">
       <DependentUpon>SignIn.pt-BR.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -516,6 +531,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Controllers\Strings.vi-VN.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.vi-VN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controllers\Strings.de-DE.resx" />
     <EmbeddedResource Include="Controllers\Strings.pt-BR.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -904,6 +923,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\UserAdministration\New.de-DE.resx" />
     <EmbeddedResource Include="Views\UserAdministration\New.pt-BR.resx" />
+    <EmbeddedResource Include="Views\User\Lockout.vi-VN.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Lockout.vi-VN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\User\Lockout.de-DE.resx" />
     <EmbeddedResource Include="Views\User\Lockout.pt-BR.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -925,6 +948,10 @@
     <EmbeddedResource Include="Views\User\Register.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Register.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\User\SignIn.vi-VN.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SignIn.vi-VN.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\User\SignIn.de-DE.resx" />
     <EmbeddedResource Include="Views\User\SignIn.pt-BR.resx">

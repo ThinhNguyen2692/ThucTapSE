@@ -362,7 +362,7 @@
     <value>Aguardando Mais Informações</value>
   </data>
   <data name="TicketStatusResolved" xml:space="preserve">
-    <value>Resolvido</value>
+    <value>respondeu</value>
   </data>
   <data name="TicketTagList" xml:space="preserve">
     <value>Marcadores</value>
@@ -448,5 +448,11 @@
   </data>
   <data name="DefaultLogonDomain" xml:space="preserve">
     <value>Domínio de logon padrão</value>
+  </data>
+  <data name="TicketStatusRoleUser" xml:space="preserve">
+    <value>respondeu</value>
+  </data>
+  <data name="TicketStatusOutOfDate" xml:space="preserve">
+    <value>Desatualizado</value>
   </data>
 </root>

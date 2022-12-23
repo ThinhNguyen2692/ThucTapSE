@@ -38,7 +38,7 @@ namespace TicketDesk.Localization
         {
             get
             {
-                var name = "en-US";
+                var name = "vi-VN";
                 var config = WebConfigurationManager.OpenWebConfiguration("/");
 
                 var section = config.GetSection("system.web/globalization") as GlobalizationSection;

@@ -445,4 +445,10 @@
   <data name="DefaultLogonDomain" xml:space="preserve">
     <value>Standard Anmeldedomäne</value>
   </data>
+  <data name="TicketStatusRoleUser" xml:space="preserve">
+    <value>Geantwortet</value>
+  </data>
+  <data name="TicketStatusOutOfDate" xml:space="preserve">
+    <value>Veraltet</value>
+  </data>
 </root>

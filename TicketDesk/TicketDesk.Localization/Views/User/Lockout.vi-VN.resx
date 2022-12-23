@@ -117,31 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="BackOption" xml:space="preserve">
-    <value>Back to projects</value>
-  </data>
-  <data name="Header" xml:space="preserve">
-    <value>Project Details</value>
-  </data>
   <data name="Legend" xml:space="preserve">
-    <value>Create Project</value>
+    <value>Đăng nhập</value>
   </data>
-  <data name="ProjectDescription" xml:space="preserve">
-    <value>Project Description</value>
-  </data>
-  <data name="ProjectName" xml:space="preserve">
-    <value>Project Name</value>
-  </data>
-  <data name="ReasonableTime" xml:space="preserve">
-    <value>Reasonable Time</value>
-  </data>
-  <data name="SaveOption" xml:space="preserve">
-    <value>Create</value>
+  <data name="Lockedout" xml:space="preserve">
+    <value>Tài khoản của bạn đã bị khóa. Xin chờ một vài phút và thử lại.</value>
   </data>
   <data name="Title" xml:space="preserve">
-    <value>New Project</value>
-  </data>
-  <data name="UserProject" xml:space="preserve">
-    <value>User Project</value>
+    <value>Đăng xuất</value>
   </data>
 </root>

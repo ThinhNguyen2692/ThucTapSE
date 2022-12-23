@@ -101,7 +101,6 @@ namespace TicketDesk.Web.Client.Controllers
         }
 
 
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ValidateOnlyIncomingValues]

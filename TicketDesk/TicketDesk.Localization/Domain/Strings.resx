@@ -449,4 +449,10 @@
   <data name="DefaultLogonDomain" xml:space="preserve">
     <value>Default Logon Domain</value>
   </data>
+  <data name="TicketStatusRoleUser" xml:space="preserve">
+    <value>Responded</value>
+  </data>
+  <data name="TicketStatusOutOfDate" xml:space="preserve">
+    <value>Out of date</value>
+  </data>
 </root>

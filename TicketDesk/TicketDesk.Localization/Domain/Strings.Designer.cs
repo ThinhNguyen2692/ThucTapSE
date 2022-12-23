@@ -925,11 +925,29 @@ namespace TicketDesk.Localization.Domain {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Out of date.
+        /// </summary>
+        public static string TicketStatusOutOfDate {
+            get {
+                return ResourceManager.GetString("TicketStatusOutOfDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Resolved.
         /// </summary>
         public static string TicketStatusResolved {
             get {
                 return ResourceManager.GetString("TicketStatusResolved", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Responded.
+        /// </summary>
+        public static string TicketStatusRoleUser {
+            get {
+                return ResourceManager.GetString("TicketStatusRoleUser", resourceCulture);
             }
         }
         

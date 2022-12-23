@@ -325,18 +325,18 @@ namespace TicketDesk.Domain.Model
 
             if (IsOpen)
             {
-                validActivities |= TicketActivity.ModifyAttachments;
+               // validActivities |= TicketActivity.ModifyAttachments;
             }
 
             if (IsOpen)
             {
                 if (isOwnedByMe || isAssignedToMe)
                 {
-                    validActivities |= TicketActivity.EditTicketInfo;
+                    //validActivities |= TicketActivity.EditTicketInfo;
                 }
                 if (isMoreInfo)
                 {
-                    validActivities |= TicketActivity.SupplyMoreInfo;
+                 //   validActivities |= TicketActivity.SupplyMoreInfo;
                     if (isAssignedToMe)
                     {
                         validActivities |= TicketActivity.CancelMoreInfo;
@@ -344,7 +344,7 @@ namespace TicketDesk.Domain.Model
                 }
                 else //!moreInfo
                 {
-                    validActivities |= TicketActivity.AddComment;
+                   // validActivities |= TicketActivity.AddComment;
                     if (isAssignedToMe)
                     {
                         validActivities |= TicketActivity.Resolve | TicketActivity.RequestMoreInfo;
@@ -383,11 +383,11 @@ namespace TicketDesk.Domain.Model
 
                 if (isAssignedToMe)
                 {
-                    validActivities |= TicketActivity.Pass | TicketActivity.GiveUp;
+                  //  validActivities |= TicketActivity.Pass | TicketActivity.GiveUp;
                 }
                 else//!isAssignedToMe
                 {
-                    validActivities |= TicketActivity.TakeOver;
+                  //  validActivities |= TicketActivity.TakeOver;
                 }
             }
             return validActivities;

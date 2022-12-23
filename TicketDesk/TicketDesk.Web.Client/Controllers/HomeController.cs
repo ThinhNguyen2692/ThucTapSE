@@ -43,7 +43,8 @@ namespace TicketDesk.Web.Client.Controllers
         {
             if (ApplicationConfig.HomeEnabled)
             {
-                return View();
+                return RedirectToActionPermanent("Index", "TicketCenter");
+               
             }
             else
             {

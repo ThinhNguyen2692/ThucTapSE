@@ -44,6 +44,7 @@ namespace TicketDesk.Web.Client.Controllers
         }
 
         // GET: TicketCenter
+        [Route("")]
         [Route("{listName?}/{page:int?}")]
         public async Task<ActionResult> Index(int? page, string listName)
         {

@@ -19,7 +19,7 @@ namespace TicketDesk.Localization.Views.ProjectSettings {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class New {
@@ -88,6 +88,33 @@ namespace TicketDesk.Localization.Views.ProjectSettings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Project Description.
+        /// </summary>
+        public static string ProjectDescription {
+            get {
+                return ResourceManager.GetString("ProjectDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Project Name.
+        /// </summary>
+        public static string ProjectName {
+            get {
+                return ResourceManager.GetString("ProjectName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reasonable Time.
+        /// </summary>
+        public static string ReasonableTime {
+            get {
+                return ResourceManager.GetString("ReasonableTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Create.
         /// </summary>
         public static string SaveOption {
@@ -102,6 +129,15 @@ namespace TicketDesk.Localization.Views.ProjectSettings {
         public static string Title {
             get {
                 return ResourceManager.GetString("Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User Project.
+        /// </summary>
+        public static string UserProject {
+            get {
+                return ResourceManager.GetString("UserProject", resourceCulture);
             }
         }
     }

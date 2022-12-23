@@ -88,7 +88,7 @@ namespace TicketDesk.Localization.Models {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Confirm new password.
+        ///   Looks up a localized string similar to Nhập lại mật khẩu mới.
         /// </summary>
         public static string ConfirmNewPassword {
             get {
@@ -97,7 +97,7 @@ namespace TicketDesk.Localization.Models {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Confirm password.
+        ///   Looks up a localized string similar to Nhập mật khẩu.
         /// </summary>
         public static string ConfirmPassword {
             get {
@@ -106,7 +106,7 @@ namespace TicketDesk.Localization.Models {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Current password.
+        ///   Looks up a localized string similar to Nhập mật khẩu hiện tại.
         /// </summary>
         public static string CurrentPassword {
             get {
@@ -115,7 +115,7 @@ namespace TicketDesk.Localization.Models {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Disabled.
+        ///   Looks up a localized string similar to Vô hiệu hóa.
         /// </summary>
         public static string Disabled {
             get {
@@ -124,7 +124,7 @@ namespace TicketDesk.Localization.Models {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Disabled.
+        ///   Looks up a localized string similar to Vô hiệu hóa.
         /// </summary>
         public static string Disabled_Prompt {
             get {
@@ -133,7 +133,7 @@ namespace TicketDesk.Localization.Models {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Display Name.
+        ///   Looks up a localized string similar to Tên.
         /// </summary>
         public static string DisplayName {
             get {
@@ -196,7 +196,7 @@ namespace TicketDesk.Localization.Models {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to New password.
+        ///   Looks up a localized string similar to Nhập mật khẩu mới.
         /// </summary>
         public static string NewPassword {
             get {
@@ -205,7 +205,7 @@ namespace TicketDesk.Localization.Models {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Password.
+        ///   Looks up a localized string similar to Nhập mật khẩu.
         /// </summary>
         public static string Password {
             get {
@@ -232,7 +232,7 @@ namespace TicketDesk.Localization.Models {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Active.
+        ///   Looks up a localized string similar to Yêu cầu.
         /// </summary>
         public static string TicketStatus_Active {
             get {
@@ -250,7 +250,7 @@ namespace TicketDesk.Localization.Models {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Closed.
+        ///   Looks up a localized string similar to Đóng.
         /// </summary>
         public static string TicketStatus_Closed {
             get {
@@ -259,7 +259,7 @@ namespace TicketDesk.Localization.Models {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to More Info.
+        ///   Looks up a localized string similar to Tạm hoãn.
         /// </summary>
         public static string TicketStatus_MoreInfo {
             get {
@@ -277,7 +277,7 @@ namespace TicketDesk.Localization.Models {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Resolved.
+        ///   Looks up a localized string similar to Phản hồi.
         /// </summary>
         public static string TicketStatus_Resolved {
             get {
