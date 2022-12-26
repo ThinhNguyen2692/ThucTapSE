@@ -13,7 +13,7 @@ namespace TicketDesk.PushNotifications.Job
         {
             var demoMode = (ConfigurationManager.AppSettings["ticketdesk:DemoModeEnabled"] ?? "false").Equals("true", StringComparison.InvariantCultureIgnoreCase);
             var isEnabled = false;
-            var interval = 2;
+            var interval = 0;
             using (var context = new TdPushNotificationContext())
             {
                 isEnabled = !demoMode && context.TicketDeskPushNotificationSettings.IsEnabled;

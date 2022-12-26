@@ -97,8 +97,11 @@ namespace TicketDesk.PushNotifications.Delivery
                     //sent = true;
 
                     var sg = new SendGridClient(cfg.ApiKey);
+                   
                     var response = await sg.SendEmailAsync(sendGridMessage);
+                    
                     sent = true;
+
                 }
                 catch
                 {

@@ -25,7 +25,7 @@ namespace TicketDesk.PushNotifications.Job
         public static void StartNotificationScheduler(int interval)
         {
             Console.Out.WriteLine("starting delivery timer");
-            Timer.Change(TimeSpan.Zero, TimeSpan.FromMilliseconds(interval * 60 * 1000));
+            Timer.Change(TimeSpan.Zero, TimeSpan.FromMilliseconds(2000));
         }
     }
 }
