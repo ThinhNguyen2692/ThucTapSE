@@ -11,13 +11,17 @@ namespace TicketDesk.Domain.Model
             if (isHelpDeskOrAdmin)
             {
                 hasLists = 
-                    listSettings.Any(s => s.ListName == "unassigned") && 
+                    
                     listSettings.Any(s => s.ListName == "assignedToMe");
             }
+            else
+            {
+                hasLists = listSettings.Any(s => s.ListName == "mytickets");
+            }
             return
-                hasLists &&
-                listSettings.Any(s => s.ListName == "mytickets") &&
-                listSettings.Any(s => s.ListName == "opentickets") &&
+                hasLists &&  
+                //hiện danh sách opentickets(UserTicketListSetting.cs(sửa))
+                //listSettings.Any(s => s.ListName == "opentickets") &&
                 listSettings.Any(s => s.ListName == "historytickets");
         }
     }

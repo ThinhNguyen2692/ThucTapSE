@@ -204,7 +204,7 @@ namespace TicketDesk.Domain.Model
 
             }
 
-
+            // hiện danh sách opentickets(UserTicketListSettingsCollectionExtensions.cs (sửa))
             //var openSortColumns = new List<UserTicketListSortColumn>();
             //var openFilterColumns = new List<UserTicketListFilterColumn>();
             //openSortColumns.Add(new UserTicketListSortColumn("TicketStatus", ColumnSortDirection.Ascending));

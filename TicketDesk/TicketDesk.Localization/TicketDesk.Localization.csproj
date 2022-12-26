@@ -82,6 +82,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Strings.resx</DependentUpon>
     </Compile>
+    <Compile Include="Validation.vi-VN.Designer.cs">
+      <DependentUpon>Validation.vi-VN.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Validation.pt-BR.Designer.cs">
       <DependentUpon>Validation.pt-BR.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -464,6 +469,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>New.resx</DependentUpon>
     </Compile>
+    <Compile Include="Views\UserAdministration\Edit.vi-VN.Designer.cs">
+      <DependentUpon>Edit.vi-VN.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Views\UserAdministration\Edit.pt-BR.Designer.cs">
       <DependentUpon>Edit.pt-BR.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -474,6 +484,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Edit.resx</DependentUpon>
     </Compile>
+    <Compile Include="Views\UserAdministration\Index.vi-VN.Designer.cs">
+      <DependentUpon>Index.vi-VN.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Views\UserAdministration\Index.pt-BR.Designer.cs">
       <DependentUpon>Index.pt-BR.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -483,6 +498,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Index.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserAdministration\New.vi-VN.Designer.cs">
+      <DependentUpon>New.vi-VN.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Views\User\Lockout.vi-VN.Designer.cs">
       <DependentUpon>Lockout.vi-VN.resx</DependentUpon>
@@ -566,6 +586,10 @@
     <EmbeddedResource Include="Infrastructure\Strings.de-DE.resx" />
     <EmbeddedResource Include="Models\Strings.de-DE.resx" />
     <EmbeddedResource Include="PushNotifications\Strings.de-DE.resx" />
+    <EmbeddedResource Include="Validation.vi-VN.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Validation.vi-VN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Validation.de-DE.resx" />
     <EmbeddedResource Include="Validation.pt-BR.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -903,6 +927,10 @@
       <LastGenOutput>New.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Shared\_Layout.de-DE.resx" />
+    <EmbeddedResource Include="Views\UserAdministration\Edit.vi-VN.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.vi-VN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\UserAdministration\Edit.de-DE.resx" />
     <EmbeddedResource Include="Views\UserAdministration\Edit.pt-BR.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -912,6 +940,10 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Edit.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\UserAdministration\Index.vi-VN.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.vi-VN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\UserAdministration\Index.de-DE.resx" />
     <EmbeddedResource Include="Views\UserAdministration\Index.pt-BR.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -920,6 +952,10 @@
     <EmbeddedResource Include="Views\UserAdministration\Index.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Index.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UserAdministration\New.vi-VN.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>New.vi-VN.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\UserAdministration\New.de-DE.resx" />
     <EmbeddedResource Include="Views\UserAdministration\New.pt-BR.resx" />

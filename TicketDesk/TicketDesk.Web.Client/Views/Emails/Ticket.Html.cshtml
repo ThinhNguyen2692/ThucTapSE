@@ -68,7 +68,8 @@ Content-Type: text/html; charset=utf-8
              )
     <div><br></div>
     <div>Bạn có khuyến nại cần được xử lý</div>
-    <div>Vui lòng truy cập vào <a href="@((Model.SiteRootUrl??string.Empty).TrimEnd('/'))@Url.Action("Index", "Ticket", new {Id = Model.Ticket.TicketId })">LinkKhieuNai</a></div>
+    <div>Vui lòng truy cập vào link để xử lý của nhân viên.</div>
+    <div> <a href="@((Model.SiteRootUrl??string.Empty).TrimEnd('/'))@Url.Action("Index", "Ticket", new {Id = Model.Ticket.TicketId })">LinkKhieuNai</a></div>
     <div><br></div>
     <div>Đây là Email tự động từ hệ thống HRM!</div>
     <div>Vui lòng không phản hồi</div>
