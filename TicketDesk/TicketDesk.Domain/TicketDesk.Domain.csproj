@@ -200,6 +200,10 @@
     <Compile Include="Migrations\202212161035350_update-ticket-date.Designer.cs">
       <DependentUpon>202212161035350_update-ticket-date.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202212280312051_updateQuantityNotify.cs" />
+    <Compile Include="Migrations\202212280312051_updateQuantityNotify.Designer.cs">
+      <DependentUpon>202212280312051_updateQuantityNotify.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\DemoDataManager.cs" />
     <Compile Include="Infrastructure\PropertyUtility.cs" />
     <Compile Include="Infrastructure\TdDomainSecurityProviderBase.cs" />
@@ -360,6 +364,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202212161035350_update-ticket-date.resx">
       <DependentUpon>202212161035350_update-ticket-date.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212280312051_updateQuantityNotify.resx">
+      <DependentUpon>202212280312051_updateQuantityNotify.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

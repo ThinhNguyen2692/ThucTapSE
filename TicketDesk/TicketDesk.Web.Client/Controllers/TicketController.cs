@@ -25,6 +25,7 @@ using TicketDesk.Domain.Model;
 using TicketDesk.IO;
 using TicketDesk.Localization.Controllers;
 using TicketDesk.Web.Client.Models;
+using TicketDesk.Web.Client.Models.Extensions;
 using TicketDesk.Web.Identity;
 
 namespace TicketDesk.Web.Client.Controllers
@@ -156,13 +157,15 @@ namespace TicketDesk.Web.Client.Controllers
             return PartialView("_TicketEvents", ticket.TicketEvents);
         }
 
+        
+     
+
         [Route("ticket-details")]
         public ActionResult TicketDetails(int ticketId)
         {
             //WARNING! This is also used as a child action and cannot be made async in MVC 5
             var ticket = Context.Tickets.Find(ticketId);
             ViewBag.DisplayProjects = Context.Projects.Any();
-
             return PartialView("_TicketDetails", ticket);
         }
 
@@ -242,5 +245,9 @@ namespace TicketDesk.Web.Client.Controllers
 
         }
 
+
+
+
+     
     }
 }

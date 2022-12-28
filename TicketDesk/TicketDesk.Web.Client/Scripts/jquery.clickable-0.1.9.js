@@ -25,6 +25,7 @@
 					if ( !jGuideLink ) return true;	// continue
 					
 					var href = jGuideLink.attr("href");
+					var href = jGuideLink.attr("href");
 					if ( !href ) return true;	// continue
 					
 					$(this).data("href", href);

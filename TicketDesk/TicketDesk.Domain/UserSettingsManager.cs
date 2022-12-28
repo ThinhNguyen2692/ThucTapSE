@@ -93,5 +93,20 @@ namespace TicketDesk.Domain
             var settings = await GetSettingsForUserAsync(userId);
             return settings.GetUserListSettingByName(listName);
         }
+
+        public async Task UpdateQuantity(int count, string userId)
+        {
+
+            var userSeting = Context.UserSettings.FindAsync(userId).Result;
+            userSeting.NotifyQuantity = count;
+            await Context.SaveChangesAsync();
+        }
+
+        public async Task<int> GetQuantityNotify(string UserId)
+        {
+            var quantity = Context.UserSettings.FindAsync(UserId).Result.NotifyQuantity;
+            if (quantity == null) quantity = 0;
+            return (int) quantity;
+        }
     }
 }

@@ -1,9 +1,16 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using TicketDesk.Domain;
 using TicketDesk.Domain.Model;
 using TicketDesk.Localization.Controllers;
+using TicketDesk.Web.Identity;
+using System.Runtime.Caching;
+using System.Web;
+using System;
+using TicketDesk.Web.Client.Models;
 
 namespace TicketDesk.Web.Client.Controllers
 {
@@ -11,11 +18,13 @@ namespace TicketDesk.Web.Client.Controllers
     public class NavigationController : Controller
     {
         public TdDomainContext Context { get; set; }
+      
 
-        
+
         public NavigationController(TdDomainContext context)
         {
             Context = context;
+        
         }
 
         [ChildActionOnly]
@@ -58,6 +67,78 @@ namespace TicketDesk.Web.Client.Controllers
 
         }
 
+       /// <summary>
+       /// Load thông báo
+       /// </summary>
+       /// <param name="TicketEventNotifications">danh sách thông báo</param>
+       /// <param name="QuantityNotify">Số lượng thông báo user đã xem (số lượng thông báo cũ)</param>
+       /// <returns></returns>
+        public async Task<PartialViewResult> TicketEventsNotify(List<TicketEventNotification> TicketEventNotifications = null, int QuantityNotify = 0)
+        {
+            NotifyViewModel viewModel = new NotifyViewModel();
+            if (TicketEventNotifications == null)
+            {
+                TicketEventNotifications = GetTicketEventNotifications();
+                QuantityNotify = GetQuantiyNotify();
+            }
+            viewModel.ticketEventNotifications = TicketEventNotifications;
+            viewModel.quantityNew = viewModel.ticketEventNotifications.Count() - QuantityNotify;
+            return PartialView("_Notify", viewModel);
+        }
+
+        /// <summary>
+        /// lấy số lượng thông báo user đã xem
+        /// </summary>
+        /// <returns></returns>
+        public int GetQuantiyNotify()
+        {
+            var userId = User.Identity.GetUserID();
+            var QuantityNotify = Context.UserSettingsManager.GetQuantityNotify(userId).Result;
+            return QuantityNotify;
+        }
+
+        /// <summary>
+        /// lấy danh sách ticket event
+        /// </summary>
+        /// <returns></returns>
+        public List<TicketEventNotification> GetTicketEventNotifications()
+        {
+            var userId = User.Identity.GetUserID();
+           var ticketEventNotifications = Context.TicketEventNotifications.Where(t => t.SubscriberId == userId).Where(t => t.IsNew).Include(t => t.TicketEvent).OrderByDescending(t => t.TicketEvent.EventDate).ToList();
+            return ticketEventNotifications;
+        }
+
+        /// <summary>
+        /// kiểm tra thông báo mới
+        /// </summary>
+        /// <returns></returns>
+        public async Task<PartialViewResult> CheckNotify()
+        {
+            var ticketEventNotifications = GetTicketEventNotifications();
+            var QuantityNotify = GetQuantiyNotify();
+            var check = ticketEventNotifications.Count() - QuantityNotify;
+            if(check == 0)
+            {
+                return null;
+            }
+            else
+            {
+                //trả về html hiện trang web
+               return await TicketEventsNotify(ticketEventNotifications, QuantityNotify);
+            }
+        }
+
+        /// <summary>
+        /// cập nhật số lượng thông báo user đã xem
+        /// </summary>
+        /// <returns></returns>
+        public async Task TicketEventsNotifyNew()
+        {
+            var userId = User.Identity.GetUserID();
+            var quantity = Context.TicketEventNotifications.Where(t => t.SubscriberId == userId).Where(t => t.IsNew).Include(t => t.TicketEvent).OrderByDescending(t => t.TicketEvent.EventDate).ToList().Count;
+            await Context.UserSettingsManager.UpdateQuantity(quantity, userId);
+        }
+
         //private async Task<int> GetUserSelectedProjectId(IEnumerable<Project> projects)
         //{
         //    var settings = await Context.UserSettingsManager.GetSettingsForUserAsync(Context.SecurityProvider.CurrentUserId);
@@ -76,10 +157,5 @@ namespace TicketDesk.Web.Client.Controllers
 
         //}
 
-        //private async Task UpdateUserSelectedProject(int projectId)
-        //{
-        //    var settings = await Context.UserSettingsManager.GetSettingsForUserAsync(Context.SecurityProvider.CurrentUserId);
-        //    settings.SelectedProjectId = projectId;
-        //}
     }
 }

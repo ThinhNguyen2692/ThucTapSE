@@ -44,6 +44,40 @@
         .Closed {
             color: #5ec829;
         }
+        .notification .badge {
+            position: absolute;
+            top: 0px;
+            right: -10px;
+            padding: 5px 10px;
+            border-radius: 50%;
+            background: red;
+            color: white;
+        }
+        .notification {
+            color: white;
+            text-decoration: none;
+            padding: 15px 26px;
+            position: relative;
+            display: inline-block;
+            border-radius: 2px;
+        }
+        .notify-ul {
+            list-style: none;
+            height: 300px;
+            overflow-x: hidden;
+            overflow-y: scroll;
+        }
+        .span-notify{
+            font-size: 12px;
+        }
+        .new{
+            background:red;
+            height:10px;
+            width:10px;
+            border-radius: 50%;
+            position: relative;
+            top: 10px;
+         }
     </style>
     @RenderSection("css", false)
     @RenderSection("cssDetail", false)
@@ -114,6 +148,12 @@
                         <li role="separator" class="nav-divider"></li>
                     </ul>
                 <ul class="nav navbar-nav navbar-right" style="margin-right: 5px;">
+                    <li class="notify-update" id="bell">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            Html.RenderAction("TicketEventsNotify", "Navigation"); 
+                           }
+                        </li>
                     <li class="dropdown hidden-sm hidden-md hidden-lg" style="padding: 10px 15px;">
                         @Html.Partial("_QuickSearch")
                     </li>
@@ -138,50 +178,7 @@
                             @Html.Partial("_LanguageOptions")
                         </ul>
                     </li>
-                    <li>
-                        <div class="dropdowns-wrapper">
-                            <div class="dropdown-container">
-                                <div class="notifications dropdown dd-trigger" ng-click="showNotifications($event)">
-                                    <span class="count animated" id="notifications-count">{{awaitingNotifications}}</span>
-                                    <span class="fa fa-bell-o"></span>
-                                </div>
-                                <div class="dropdown-menu animated" id="notification-dropdown">
-                                    <div class="dropdown-header">
-                                        <span class="triangle"></span>
-                                        <span class="heading">Notifications</span>
-                                        <span class="count" id="dd-notifications-count">{{newNotifications.length}}</span>
-                                    </div>
-                                    <div class="dropdown-body">
-                                        <div class="notification new" ng-repeat="notification in newNotifications.slice().reverse() track by notification.timestamp">
-                                            <div class="notification-image-wrapper">
-                                                <div class="notification-image">
-                                                    <img src="{{notification.user.imageUrl}}" alt="" width="32">
-                                                </div>
-                                            </div>
-                                            <div class="notification-text">
-                                                <span class="highlight">{{notification.user.name}}</span> {{notification.action}} {{notification.target}}
-                                            </div>
-                                        </div>
-                                        <div class="notification" ng-repeat="notification in readNotifications.slice().reverse() track by $index">
-                                            <div class="notification-image-wrapper">
-                                                <div class="notification-image">
-                                                    <img src="{{notification.user.imageUrl}}" alt="" width="32">
-                                                </div>
-                                            </div>
-                                            <div class="notification-text">
-                                                <span class="highlight">{{notification.user.name}}</span> {{notification.action}} {{notification.target}}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="dropdown-container">
-                                <div class="messages dropdown">
-                                    <span class="fa fa-envelope-o"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
+
                     @*<li class="@Html.IsActiveRoute("About", "Home")">
             <a href="@Url.Action("About", "Home", new {area = ""})"><i class="fa fa-info-circle fa-lg"></i> <span class="hidden-sm">@_Layout.About</span></a>
         </li>*@
@@ -234,11 +231,38 @@
 
 
     <script type="text/javascript">
+        function notify() {
+            $.ajax({
+                url: '/Navigation/TicketEventsNotifyNew',
+                success: function (data) {
+                    $('.badge').html("0");
+                }
+            });
+        }
+        function notifyNew() {
+            $.ajax({
+                url: '/Navigation/CheckNotify',
+                success: function (data) {
+                    if (data != "") {
+                        $('.notify-update').html(data);
+                    }
+                   
+                }
+            });
+        }
         $(document).ready(function () {
             $('[data-toggle="tooltip"]').tooltip();
+           
+            $("#bell").click(function () {
+                notify()
+            });
+            setInterval(notifyNew, 3000);
         });
 
+      
+      
     </script>
 
+    
 </body>
 </html>

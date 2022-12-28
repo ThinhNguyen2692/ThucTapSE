@@ -19,6 +19,7 @@ using System.Web.Mvc;
 using TicketDesk.Domain;
 using TicketDesk.Domain.Model;
 using TicketDesk.Web.Client.Models;
+using TicketDesk.PushNotifications;
 
 namespace TicketDesk.Web.Client.Controllers
 {
@@ -28,6 +29,7 @@ namespace TicketDesk.Web.Client.Controllers
     public class TicketCenterController : Controller
     {
         private TdDomainContext Context { get; set; }
+       
         public TicketCenterController(TdDomainContext context)
         {
             Context = context;
@@ -36,6 +38,7 @@ namespace TicketDesk.Web.Client.Controllers
         [Route("reset-user-lists")]
         public async Task<ActionResult> ResetUserLists()
         {
+            
             var uId = Context.SecurityProvider.CurrentUserId;
             await Context.UserSettingsManager.ResetAllListSettingsForUserAsync(uId);
             var x = await Context.SaveChangesAsync();
@@ -48,6 +51,7 @@ namespace TicketDesk.Web.Client.Controllers
         [Route("{listName?}/{page:int?}")]
         public async Task<ActionResult> Index(int? page, string listName)
         {
+           
             listName = listName ?? (Context.SecurityProvider.IsTdHelpDeskUser ? "assignedToMe" : "mytickets");
             var pageNumber = page ?? 1;
 
@@ -73,15 +77,10 @@ namespace TicketDesk.Web.Client.Controllers
         {
             var uId = Context.SecurityProvider.CurrentUserId;
             var userSetting = await Context.UserSettingsManager.GetSettingsForUserAsync(uId);
-
             var currentListSetting = userSetting.GetUserListSettingByName(listName);
-
             currentListSetting.ModifyFilterSettings(pageSize, ticketStatus, owner, assignedTo);
-            
             await Context.SaveChangesAsync();
-
             return await GetTicketListPartial(null, listName);
-
         }
 
         [Route("sortList/{listName=opentickets}/{page:int?}")]

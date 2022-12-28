@@ -90,5 +90,6 @@ namespace TicketDesk.Domain.Model
                 return Convert.ToBase64String(ms.ToArray());
             }
         }
+
     }
 }

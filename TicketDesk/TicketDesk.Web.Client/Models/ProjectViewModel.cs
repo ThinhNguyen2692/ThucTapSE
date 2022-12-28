@@ -87,4 +87,11 @@ namespace TicketDesk.Web.Client.Models
       
     }
 
+
+    public class NotifyViewModel
+    {
+        public NotifyViewModel() { }
+        public List<TicketEventNotification> ticketEventNotifications { get; set; } = new List<TicketEventNotification>();
+        public int quantityNew { get; set; } = 0;
+    }
 }

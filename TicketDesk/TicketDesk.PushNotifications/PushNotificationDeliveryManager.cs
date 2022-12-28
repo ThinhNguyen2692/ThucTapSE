@@ -145,5 +145,7 @@ namespace TicketDesk.PushNotifications
                 await provider.SendReadyMessageAsync(readyNote, retryMax, retryIntv, ct);
             }
         }
+
+      
     }
 }

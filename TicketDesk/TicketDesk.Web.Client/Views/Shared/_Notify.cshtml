@@ -1,0 +1,28 @@
+﻿@using TicketDesk.Domain;
+@using TicketDesk.Domain.Model;
+@using TicketDesk.Web.Client.Models
+@using TicketDesk.Web.Client.Models.Extensions
+@model NotifyViewModel
+
+
+<a href="#" class="dropdown-toggle notification"  data-toggle="dropdown">
+    <i class="fa fa-bell"></i>
+    <span class="badge">@Model.quantityNew</span>
+</a>
+<ul class="dropdown-menu notify-ul" role="menu">
+    <div>
+        <h3>Thông báo</h3>
+    </div>
+    @foreach (var evt in Model.ticketEventNotifications)
+    {
+    <li class="notify-li">
+        <a class="link-notify" href="/ticket/@evt.TicketId"> 
+            <h5>             
+                @evt.TicketEvent.EventDescription
+            </h5>
+            <span class="span-notify">@evt.TicketEvent.EventDate.ToString("hh:mm dd/MM/yyyy")</span>
+        </a>
+    </li>
+    }
+</ul>
+                   

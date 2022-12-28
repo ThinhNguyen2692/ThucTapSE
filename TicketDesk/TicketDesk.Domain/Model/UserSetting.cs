@@ -12,13 +12,14 @@
 // provided to the recipient.
 
 using System;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using TicketDesk.Localization;
 
 namespace TicketDesk.Domain.Model
 {
-    
+
     public class UserSetting
     {
         [Key]
@@ -28,7 +29,10 @@ namespace TicketDesk.Domain.Model
         public virtual UserTicketListSettingsCollection ListSettings { get; internal set; }
 
         public int? SelectedProjectId { get; set; }
-       
+
+        [DefaultValue(0)]
+        public int? NotifyQuantity { get; set; }
+
 
         public UserTicketListSetting GetUserListSettingByName(string listName)
         {
