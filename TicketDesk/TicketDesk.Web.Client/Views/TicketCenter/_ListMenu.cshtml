@@ -38,7 +38,12 @@
 
 
         </li>
-
+        <li data-toggle="tooltip"
+            data-placement="bottom">
+            <a href='@Url.Action("TaskExportExcell","TicketCenter",new { id = currentListSettings.ListName })'>
+                <i class="fa fa-file-excel-o"></i> <span class="hidden-xs hidden-sm">Excel</span>
+            </a>
+        </li>
     </ul>
 
 </div>

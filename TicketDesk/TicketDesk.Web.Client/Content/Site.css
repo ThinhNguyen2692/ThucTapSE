@@ -451,3 +451,13 @@ p {
     vertical-align: bottom;
 }
 
+.btn-File {
+    display: inline-block;
+    background-color: indigo;
+    color: white;
+    padding: 0.5rem;
+    font-family: sans-serif;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    margin-top: 1rem;
+}

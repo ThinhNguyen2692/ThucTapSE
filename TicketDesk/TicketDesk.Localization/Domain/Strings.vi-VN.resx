@@ -371,10 +371,10 @@
     <value>Nhãn</value>
   </data>
   <data name="TicketTicketId" xml:space="preserve">
-    <value>Ticket Id</value>
+    <value>Mã</value>
   </data>
   <data name="TicketTicketIdShort" xml:space="preserve">
-    <value>Id</value>
+    <value>Mã</value>
   </data>
   <data name="TicketTicketStatus" xml:space="preserve">
     <value>Trạng thái</value>

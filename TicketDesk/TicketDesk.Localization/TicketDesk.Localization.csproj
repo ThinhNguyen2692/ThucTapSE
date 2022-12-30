@@ -82,6 +82,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Strings.resx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Strings.vi-VN.Designer.cs">
+      <DependentUpon>Strings.vi-VN.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Validation.vi-VN.Designer.cs">
       <DependentUpon>Validation.vi-VN.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -584,6 +589,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Identity\Strings.de-DE.resx" />
     <EmbeddedResource Include="Infrastructure\Strings.de-DE.resx" />
+    <EmbeddedResource Include="Models\Strings.vi-VN.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.vi-VN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Models\Strings.de-DE.resx" />
     <EmbeddedResource Include="PushNotifications\Strings.de-DE.resx" />
     <EmbeddedResource Include="Validation.vi-VN.resx">

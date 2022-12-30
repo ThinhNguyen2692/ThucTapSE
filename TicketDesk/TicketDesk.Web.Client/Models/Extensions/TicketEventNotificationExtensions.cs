@@ -91,5 +91,10 @@ namespace TicketDesk.Domain.Model
             }
         }
 
+        public static string GetUrl()
+        {
+            return RootUrl;
+        }
+
     }
 }

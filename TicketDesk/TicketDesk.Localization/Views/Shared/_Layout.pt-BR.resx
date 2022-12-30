@@ -129,6 +129,9 @@
   <data name="DemoDataManagement" xml:space="preserve">
     <value>Gestão de Dados de Demonstração</value>
   </data>
+  <data name="ExportExcel" xml:space="preserve">
+    <value>Export excel</value>
+  </data>
   <data name="Home" xml:space="preserve">
     <value>Página Inicial</value>
   </data>

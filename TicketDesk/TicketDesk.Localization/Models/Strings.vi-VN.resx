@@ -117,73 +117,88 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="About" xml:space="preserve">
-    <value>Über</value>
+  <data name="AssignedTo_Anyone" xml:space="preserve">
+    <value>-- anyone --</value>
   </data>
-  <data name="Account" xml:space="preserve">
-    <value>Konto</value>
+  <data name="AssignedTo_Unassigned" xml:space="preserve">
+    <value>-- unassigned --</value>
   </data>
-  <data name="ApplicationSettings" xml:space="preserve">
-    <value>Anwendungseinstellungen</value>
+  <data name="ConfirmationDoNotMatch" xml:space="preserve">
+    <value>The password and confirmation password do not match.</value>
   </data>
-  <data name="DemoDataManagement" xml:space="preserve">
-    <value>Demodaten Verwaltung</value>
+  <data name="ConfirmNewPassword" xml:space="preserve">
+    <value>Nhập lại mật khẩu mới</value>
   </data>
-  <data name="Home" xml:space="preserve">
-    <value>Startseite</value>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Nhập mật khẩu</value>
   </data>
-  <data name="Language" xml:space="preserve">
-    <value>Sprache</value>
+  <data name="CurrentPassword" xml:space="preserve">
+    <value>Nhập mật khẩu hiện tại</value>
   </data>
-  <data name="LogOff" xml:space="preserve">
-    <value>Abmelden</value>
+  <data name="Disabled" xml:space="preserve">
+    <value>Vô hiệu hóa</value>
   </data>
-  <data name="ManageProjects" xml:space="preserve">
-    <value>Projekte verwalten</value>
+  <data name="Disabled_Prompt" xml:space="preserve">
+    <value>Vô hiệu hóa</value>
   </data>
-  <data name="ManageUsers" xml:space="preserve">
-    <value>Benutzer verwalten</value>
+  <data name="DisplayName" xml:space="preserve">
+    <value>Tên</value>
   </data>
-  <data name="MyAccount" xml:space="preserve">
-    <value>Mein Konto</value>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
   </data>
-  <data name="NewTicket" xml:space="preserve">
-    <value>Neues Ticket</value>
+  <data name="IsDisabled_Description" xml:space="preserve">
+    <value>Determines if the account has been disabled by an administrator.</value>
   </data>
-  <data name="PushNotificationSettings" xml:space="preserve">
-    <value>Pushbenachrichtigungseinstellungen</value>
+  <data name="IsLocked_Description" xml:space="preserve">
+    <value>Determines if the account has been locked. Temporary locks are created by invalid login attempts.</value>
   </data>
-  <data name="Register" xml:space="preserve">
-    <value>Registrieren</value>
+  <data name="Locked" xml:space="preserve">
+    <value>Locked</value>
   </data>
-  <data name="Search" xml:space="preserve">
-    <value>Suche</value>
+  <data name="Locked_Prompt" xml:space="preserve">
+    <value>Locked</value>
   </data>
-  <data name="SearchManagement" xml:space="preserve">
-    <value>Suchverwaltung</value>
+  <data name="NewConfirmationDoNotMatch" xml:space="preserve">
+    <value>The new password and confirmation password do not match.</value>
   </data>
-  <data name="Settings" xml:space="preserve">
-    <value>Einstellungen</value>
+  <data name="NewPassword" xml:space="preserve">
+    <value>Nhập mật khẩu mới</value>
   </data>
-  <data name="SignIn" xml:space="preserve">
-    <value>Anmelden</value>
+  <data name="Password" xml:space="preserve">
+    <value>Nhập mật khẩu</value>
   </data>
-  <data name="TicketCenter" xml:space="preserve">
-    <value>Ticket-Center</value>
+  <data name="RememberMe" xml:space="preserve">
+    <value>Remember me?</value>
   </data>
-  <data name="Toggle" xml:space="preserve">
-    <value>Navigation umschalten</value>
+  <data name="SelectList_DefaultItem" xml:space="preserve">
+    <value>-- select --</value>
   </data>
-  <data name="Description" xml:space="preserve">
-    <value>Dieses Konto wurde gesperrt, bitte versuchen Sie es später noch einmal.</value>
+  <data name="TicketStatus_Active" xml:space="preserve">
+    <value>Yêu cầu</value>
   </data>
-  <data name="Header" xml:space="preserve">
-    <value>Gesperrt.</value>
+  <data name="TicketStatus_Any" xml:space="preserve">
+    <value>-- any --</value>
   </data>
-  <data name="Title" xml:space="preserve">
-    <value>Gesperrt</value>
+  <data name="TicketStatus_Closed" xml:space="preserve">
+    <value>Đóng</value>
   </data>
-  <data name="ExportExcel" xml:space="preserve">
-    <value>Export excel</value>
+  <data name="TicketStatus_MoreInfo" xml:space="preserve">
+    <value>Tạm hoãn</value>
+  </data>
+  <data name="TicketStatus_Open" xml:space="preserve">
+    <value>-- open --</value>
+  </data>
+  <data name="TicketStatus_Resolved" xml:space="preserve">
+    <value>Phản hồi</value>
+  </data>
+  <data name="UserNameOrEmail" xml:space="preserve">
+    <value>Username / Email</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="TicketId" xml:space="preserve">
+    <value>id</value>
   </data>
 </root>

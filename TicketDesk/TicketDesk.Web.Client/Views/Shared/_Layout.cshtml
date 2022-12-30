@@ -187,8 +187,11 @@
         </div>
         @if (User.Identity.IsAuthenticated)
         {
+
+
             <div class="container-fluid navbar-default" style="border-top: 1px solid #e7e7e7; padding: 7px;">
                 <div class="form form-inline pull-left-xs pull-right-sm">
+                  
                     @{ Html.RenderAction("ProjectMenu", "Navigation"); }
                     <div class="form-group hidden-xs">
                         @Html.Partial("_QuickSearch")
@@ -231,6 +234,7 @@
 
 
     <script type="text/javascript">
+        //Dánh dấu đã xem thông báo
         function notify() {
             $.ajax({
                 url: '/Navigation/TicketEventsNotifyNew',
@@ -239,6 +243,7 @@
                 }
             });
         }
+        // kiểm tra thông báo mới
         function notifyNew() {
             $.ajax({
                 url: '/Navigation/CheckNotify',
@@ -246,10 +251,31 @@
                     if (data != "") {
                         $('.notify-update').html(data);
                     }
-                   
                 }
             });
         }
+        //Excel
+        function ExprotExcell(path) {
+            $.ajax({
+                url: '/tickets/Export',
+                data: {
+                    path: path
+                },
+                success: function (data) {
+                    if (data.status = 200) {
+                        console.log(data)
+                    }
+                },
+                Error: function (data) {
+                    console.log(data)
+                }
+            });
+        }
+
+        function GetURLExportExcel(key) {
+            $(".btn-export-excel").attr("href", "/tickets/Export?Length=12")
+        }
+
         $(document).ready(function () {
             $('[data-toggle="tooltip"]').tooltip();
            
@@ -257,10 +283,13 @@
                 notify()
             });
             setInterval(notifyNew, 3000);
+
+            $('.btn-excel').click(function () {
+                ExprotExcell("Cell")
+            });
+            
         });
 
-      
-      
     </script>
 
     

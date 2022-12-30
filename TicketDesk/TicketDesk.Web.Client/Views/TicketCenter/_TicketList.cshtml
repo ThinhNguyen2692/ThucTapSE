@@ -30,40 +30,51 @@
 <div id="ticketList" class="panel panel-default">
     <div class="panel-heading row-no-padding">
         @Html.Partial("_FilterBar")
+
     </div>
     <div class="panel-body" style="padding: 0;">
+
         <div class="table-responsive">
             <table class="table table-hover table-condensed">
                 <thead>
                     <tr>
                         <th>
-                            @Ajax.SortableColumnHeader(Html, Model.CurrentListSetting, Model.CurrentPage, "SortList", Model.CurrentListSetting.ListName, "TicketId", Index.TicketList_ID, ajaxSortOptions)
+                            <a href="#">@Index.TicketList_ID</a> 
+                            @*@Ajax.SortableColumnHeader(Html, Model.CurrentListSetting, Model.CurrentPage, "SortList", Model.CurrentListSetting.ListName, "TicketId", Index.TicketList_ID, ajaxSortOptions)*@
                         </th>
                         <th>
-                            @Ajax.SortableColumnHeader(Html, Model.CurrentListSetting, Model.CurrentPage, "SortList", Model.CurrentListSetting.ListName, "Title", Index.TicketList_Title, ajaxSortOptions)
+                            <a href="#">@Index.TicketList_Title</a>
+                            @*@Ajax.SortableColumnHeader(Html, Model.CurrentListSetting, Model.CurrentPage, "SortList", Model.CurrentListSetting.ListName, "Title", Index.TicketList_Title, ajaxSortOptions)*@
                         </th>
                         <th>
-                            @Ajax.SortableColumnHeader(Html, Model.CurrentListSetting, Model.CurrentPage, "SortList", Model.CurrentListSetting.ListName, "TicketStatus", Index.TicketList_Status, ajaxSortOptions)
+                            <a href="#">@Index.TicketList_Status</a>
+                            @*@Ajax.SortableColumnHeader(Html, Model.CurrentListSetting, Model.CurrentPage, "SortList", Model.CurrentListSetting.ListName, "TicketStatus", Index.TicketList_Status, ajaxSortOptions)*@
                         </th>
                         <th class="hidden-xs">
-                            @Ajax.SortableColumnHeader(Html, Model.CurrentListSetting, Model.CurrentPage, "SortList", Model.CurrentListSetting.ListName, "Owner", Index.TicketList_Owner, ajaxSortOptions)
+                            <a href="#">@Index.TicketList_Owner</a>
+                            @*@Ajax.SortableColumnHeader(Html, Model.CurrentListSetting, Model.CurrentPage, "SortList", Model.CurrentListSetting.ListName, "Owner", Index.TicketList_Owner, ajaxSortOptions)*@
                         </th>
                         <th>
-                            @Ajax.SortableColumnHeader(Html, Model.CurrentListSetting, Model.CurrentPage, "SortList", Model.CurrentListSetting.ListName, "AssignedTo", Index.TicketList_Assigned, ajaxSortOptions)
+                            <a href="#">@Index.TicketList_Assigned</a>
+                            @*@Ajax.SortableColumnHeader(Html, Model.CurrentListSetting, Model.CurrentPage, "SortList", Model.CurrentListSetting.ListName, "AssignedTo", Index.TicketList_Assigned, ajaxSortOptions)*@
                         </th>
 
                         <th>
-                            @Ajax.SortableColumnHeader(Html, Model.CurrentListSetting, Model.CurrentPage, "SortList", Model.CurrentListSetting.ListName, "TargetDate", Index.TicketList_Target, ajaxSortOptions)
+                            <a href="#">@Index.TicketList_Target</a>
+                            @*@Ajax.SortableColumnHeader(Html, Model.CurrentListSetting, Model.CurrentPage, "SortList", Model.CurrentListSetting.ListName, "TargetDate", Index.TicketList_Target, ajaxSortOptions)*@
                         </th>
                         <th style="color: #23527c;">
-                            @Ajax.SortableColumnHeader(Html, Model.CurrentListSetting, Model.CurrentPage, "SortList", Model.CurrentListSetting.ListName, "DueDate", Index.TicketList_Due, ajaxSortOptions)
+                            <a href="#">@Index.TicketList_Due</a>
+                            @*@Ajax.SortableColumnHeader(Html, Model.CurrentListSetting, Model.CurrentPage, "SortList", Model.CurrentListSetting.ListName, "DueDate", Index.TicketList_Due, ajaxSortOptions)*@
 
                         </th>
                         <th class="hidden-sm hidden-xs">
-                            @Ajax.SortableColumnHeader(Html, Model.CurrentListSetting, Model.CurrentPage, "SortList", Model.CurrentListSetting.ListName, "CreatedDate", Index.TicketList_Created, ajaxSortOptions)
+                            <a href="#">@Index.TicketList_Created</a>
+                            @*@Ajax.SortableColumnHeader(Html, Model.CurrentListSetting, Model.CurrentPage, "SortList", Model.CurrentListSetting.ListName, "CreatedDate", Index.TicketList_Created, ajaxSortOptions)*@
                         </th>
                         <th>
-                            @Ajax.SortableColumnHeader(Html, Model.CurrentListSetting, Model.CurrentPage, "SortList", Model.CurrentListSetting.ListName, "LastUpdateDate", Index.TicketList_Updated, ajaxSortOptions)
+                            <a href="#">@Index.TicketList_Updated</a>
+                            @*@Ajax.SortableColumnHeader(Html, Model.CurrentListSetting, Model.CurrentPage, "SortList", Model.CurrentListSetting.ListName, "LastUpdateDate", Index.TicketList_Updated, ajaxSortOptions)*@
                         </th>
                     </tr>
                 </thead>
@@ -131,9 +142,7 @@
                                 @item.LastUpdateDate.ToString("d")<br />
                                 @item.LastUpdateDate.ToString("t")
                             </td>
-
                         </tr>
-
                     }
                 </tbody>
 
