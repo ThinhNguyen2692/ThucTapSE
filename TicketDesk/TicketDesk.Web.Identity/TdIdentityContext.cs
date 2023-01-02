@@ -38,9 +38,5 @@ namespace TicketDesk.Web.Identity
             modelBuilder.Entity<IdentityUserClaim>().ToTable("IdentityUserClaims");
 
         }
-
-       
-
-
     }
 }
